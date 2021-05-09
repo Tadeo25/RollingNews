@@ -26,3 +26,30 @@
     right: 5px;
         transition: 800ms;
 }
+
+@media all and (min-width: 992px) {
+.altura{
+    max-height: 160px;
+    }
+}
+
+/* .imgcards {
+    filter: grayscale(60%)
+} */
+
+.textocards{
+    background: rgba(0,0,0,.4);
+    color: #fff;
+    font-size: 10vw;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    text-shadow: 
+    2px 2px 0 #000,
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+  
+  }
