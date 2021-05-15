@@ -5,13 +5,26 @@
     /* #E0F8E6 ; */
 }
 
+.bgtitulos{
+    background-color: #eaeef2;
+    background-image: linear-gradient(72deg, #eaeef2 0%, #036393 100%);
+    
+
+    
+
+}
+
 .colortext{
     color: #5858FA
 }
 
 .fondo{
-    background-color: #e0f8ec;
-    background-image: linear-gradient(29deg, #e0f8ec 0%, #fbfbef 100%);
+    background-color: #e6e6e6;
+background-image: linear-gradient(0deg, #e6e6e6 0%, #fafafa 100%);
+
+
+   /*  background-color: #e0f8ec;
+    background-image: linear-gradient(29deg, #e0f8ec 0%, #fbfbef 100%); */
     
 
 }
@@ -20,12 +33,6 @@
     font-family: 'Newsreader', serif;
 }
 
-.efectocard:hover {
-    position: relative;
-    bottom: 5px;
-    right: 5px;
-        transition: 800ms;
-}
 
 @media all and (min-width: 992px) {
 .altura{

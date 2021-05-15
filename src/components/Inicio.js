@@ -21,7 +21,7 @@ const Inicio = () => {
           <Col xs={12} md={1}></Col>
           <Col xs={12} md={7}>
             <Card.Img
-              className="rounded efectocard"
+              className="rounded"
               src={destacado2}
               alt="Imagen noticia principal"
             />
@@ -82,7 +82,7 @@ const Inicio = () => {
           </Col>
         </Row>
         <hr></hr>
-        <h1 className="fuentetitulos">Deportes</h1>
+        <h1 className="fuentetitulos bgtitulos">Deportes</h1>
         <hr></hr>
         <Row>
           <Col xs={12} md={6}>
@@ -131,7 +131,7 @@ const Inicio = () => {
           </Col>
         </Row>
         <hr></hr>
-        <h1 className="fuentetitulos">Tecnología</h1>
+        <h1 className="fuentetitulos bgtitulos">Tecnología</h1>
         <hr></hr>
         <Row>
           <Col xs={12} md={7}>
@@ -184,7 +184,7 @@ const Inicio = () => {
           </Col>
         </Row>
         <hr></hr>
-        <h1 className="fuentetitulos">Espectaculos</h1>
+        <h1 className="fuentetitulos bgtitulos">Espectaculos</h1>
         <hr></hr>
         <Row>
           <Col xs={12} md={6}>
