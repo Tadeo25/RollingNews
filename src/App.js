@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css' 
-import DetalleNoticias from './components/DetalleNoticias'
+import SeccionNoticias from './components/SeccionNoticias'
 
 function App() {
   return (
     <div >
-     <DetalleNoticias />
+     <SeccionNoticias />
     </div>
   );
 }

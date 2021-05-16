@@ -3,7 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import {Nav, NavDropdown} from "react-bootstrap";
 
 export default function DetalleNoticias() {
-  return (
+
+return (
     <div>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
