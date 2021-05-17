@@ -7,10 +7,10 @@ import banner2 from "./img/coronavirus2.gif";
 import banner3 from "./img/coronavirus3.gif";
 import espectaculoscine from "./img/espectaculos_cine.jpg";
 import espectaculostv from "./img/espectaculos_tv.jpg";
-import espectaculosmusica from "./img/espectaculos_musica.jpg"
-import espectaculosteatro from "./img/espectaculos_teatro.jpg"
-import publicidad1 from "./img/publicidad1.gif"
-import publicidad2 from "./img/publicidad2.gif"
+import espectaculosmusica from "./img/espectaculos_musica.jpg";
+import espectaculosteatro from "./img/espectaculos_teatro.jpg";
+import publicidad1 from "./img/publicidad1.gif";
+import publicidad2 from "./img/publicidad2.gif";
 import "../App.css";
 
 const Inicio = () => {
@@ -18,12 +18,16 @@ const Inicio = () => {
     <section className="fondo">
       <Container>
         <Row>
-        <Col xs={12} md={1}></Col>
-        <Col xs={12} md={11}>
-          <img className="tex-center my-3 d-none d-lg-block" src={publicidad1} alt="gif publicidad google" />
-        </Col>
+          <Col xs={12} md={1}></Col>
+          <Col xs={12} md={11}>
+            <img
+              className="tex-center my-3 d-none d-lg-block"
+              src={publicidad1}
+              alt="gif publicidad google"
+            />
+          </Col>
         </Row>
-        
+
         <Row>
           <Col xs={12} md={1}></Col>
           <Col xs={12} md={7}>
@@ -40,8 +44,11 @@ const Inicio = () => {
             </Card.Body>
           </Col>
           <Col xs={12} md={4}>
-                           <img className="text-center d-block mx-auto d-none d-md-block w-75 my-3" src={publicidad2} alt="gif publicidad leer libros" />
-                             
+            <img
+              className="text-center d-block mx-auto d-none d-md-block w-75 my-3"
+              src={publicidad2}
+              alt="gif publicidad leer libros"
+            />
           </Col>
 
           <Col xs={12} md={4}>
@@ -196,41 +203,42 @@ const Inicio = () => {
         <hr></hr>
         <Row>
           <Col xs={12} md={6}>
-          <Card className="bg-dark text-white">
-  <Card.Img src={espectaculoscine} alt="imagen sección cine" />
-  <Card.ImgOverlay>
-    <Card.Title className='fuentetitulos textocards'>CINE</Card.Title>
-      </Card.ImgOverlay>
-  </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={espectaculoscine} alt="imagen sección cine" />
+              <Card.ImgOverlay>
+                <Card.Title className="fuentetitulos textocards">
+                  CINE
+                </Card.Title>
+              </Card.ImgOverlay>
+            </Card>
 
-  <Card className="bg-dark text-white my-3">
-  <Card.Img src={espectaculosteatro} alt="imagen sección teatro"/>
-  <Card.ImgOverlay>
-    <Card.Title className='fuentetitulos textocards'>TEATRO</Card.Title>
-      
-  </Card.ImgOverlay>
-</Card>
+            <Card className="bg-dark text-white my-3">
+              <Card.Img src={espectaculosteatro} alt="imagen sección teatro" />
+              <Card.ImgOverlay>
+                <Card.Title className="fuentetitulos textocards">
+                  TEATRO
+                </Card.Title>
+              </Card.ImgOverlay>
+            </Card>
           </Col>
           <Col xs={12} md={6}>
-          <Card className="bg-dark text-white">
-  <Card.Img src={espectaculosmusica} alt="imagen sección música" />
-  <Card.ImgOverlay>
-    <Card.Title className='fuentetitulos textocards'>MUSICA</Card.Title>
-     
-  </Card.ImgOverlay>
-  </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={espectaculosmusica} alt="imagen sección música" />
+              <Card.ImgOverlay>
+                <Card.Title className="fuentetitulos textocards">
+                  MUSICA
+                </Card.Title>
+              </Card.ImgOverlay>
+            </Card>
 
-  <Card className="bg-dark text-white my-3">
-  <Card.Img src={espectaculostv} alt="imagen sección tv" />
-  <Card.ImgOverlay>
-    <Card.Title className='fuentetitulos textocards'>TV</Card.Title>
-       
-  </Card.ImgOverlay>
-</Card>
-
+            <Card className="bg-dark text-white my-3">
+              <Card.Img src={espectaculostv} alt="imagen sección tv" />
+              <Card.ImgOverlay>
+                <Card.Title className="fuentetitulos textocards">TV</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
           </Col>
         </Row>
-
       </Container>
     </section>
   );
