@@ -1,7 +1,5 @@
 import React from "react";
-import { Container, Carousel, Card, Row, Col, Button } from "react-bootstrap";
-// import Carousel from 'react-bootstrap/Carousel'
-// import Card from 'react-bootstrap/Card'
+import { Container, Card, Row, Col } from "react-bootstrap";
 import destacado1 from "./img/vacunas_principal.jpg";
 import destacado2 from "./img/estacionDeServicio_principal.jpg";
 import banner1 from "./img/coronavirus.jpg";
@@ -11,6 +9,8 @@ import espectaculoscine from "./img/espectaculos_cine.jpg";
 import espectaculostv from "./img/espectaculos_tv.jpg";
 import espectaculosmusica from "./img/espectaculos_musica.jpg"
 import espectaculosteatro from "./img/espectaculos_teatro.jpg"
+import publicidad1 from "./img/publicidad1.gif"
+import publicidad2 from "./img/publicidad2.gif"
 import "../App.css";
 
 const Inicio = () => {
@@ -18,10 +18,17 @@ const Inicio = () => {
     <section className="fondo">
       <Container>
         <Row>
+        <Col xs={12} md={1}></Col>
+        <Col xs={12} md={11}>
+          <img className="tex-center my-3 d-none d-lg-block" src={publicidad1} alt="gif publicidad google" />
+        </Col>
+        </Row>
+        
+        <Row>
           <Col xs={12} md={1}></Col>
           <Col xs={12} md={7}>
             <Card.Img
-              className="rounded"
+              className="rounded mt-3"
               src={destacado2}
               alt="Imagen noticia principal"
             />
@@ -33,14 +40,15 @@ const Inicio = () => {
             </Card.Body>
           </Col>
           <Col xs={12} md={4}>
-            <h3>ACA VA LA PUBLICIDAD</h3>
+                           <img className="text-center d-block mx-auto d-none d-md-block w-75 my-3" src={publicidad2} alt="gif publicidad leer libros" />
+                             
           </Col>
 
           <Col xs={12} md={4}>
             <Card.Img
               className="rounded border-bottom mt-4"
               src={destacado1}
-              alt="Imagen noticia principal"
+              alt="imagen sección principal noticia 2"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
@@ -55,7 +63,7 @@ const Inicio = () => {
             <Card.Img
               className="rounded border-bottom mt-4"
               src={destacado1}
-              alt="Imagen noticia principal"
+              alt="imagen sección principal noticia 3"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
@@ -70,7 +78,7 @@ const Inicio = () => {
             <Card.Img
               className="rounded border-bottom mt-4"
               src={destacado1}
-              alt="Imagen noticia principal"
+              alt="imagen sección principal noticia 4"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
@@ -121,13 +129,13 @@ const Inicio = () => {
         </Row>
         <Row className="my-3">
           <Col xs={12} md={4}>
-            <img className="w-100" src={banner1} alt="" />
+            <img className="w-100" src={banner1} alt="banner 1 coronavirus" />
           </Col>
           <Col xs={12} md={4}>
-            <img className="w-100" src={banner2} alt="" />
+            <img className="w-100" src={banner2} alt="banner 2 coronavirus" />
           </Col>
           <Col xs={12} md={4}>
-            <img className="w-100" src={banner3} alt="" />
+            <img className="w-100" src={banner3} alt="banner 3 coronavirus" />
           </Col>
         </Row>
         <hr></hr>
@@ -138,7 +146,7 @@ const Inicio = () => {
             <Card.Img
               className="rounded"
               src={destacado2}
-              alt="Imagen noticia principal"
+              alt="Imagen principal sección tecnología"
             />
 
             <Card.Body className="shadow bgcard rounded border">
@@ -154,7 +162,7 @@ const Inicio = () => {
                 <Card.Img
                   className="rounded altura"
                   src={destacado2}
-                  alt="Imagen noticia principal"
+                  alt="Imagen 2 sección tecnología"
                 />
 
                 <Card.Body className="shadow bgcard rounded border">
@@ -169,7 +177,7 @@ const Inicio = () => {
                 <Card.Img
                   className="rounded altura"
                   src={destacado2}
-                  alt="Imagen noticia principal"
+                  alt="Imagen 3 sección tecnología"
                 />
 
                 <Card.Body className="shadow bgcard rounded border">
@@ -189,14 +197,14 @@ const Inicio = () => {
         <Row>
           <Col xs={12} md={6}>
           <Card className="bg-dark text-white">
-  <Card.Img src={espectaculoscine} alt="Card image" />
+  <Card.Img src={espectaculoscine} alt="imagen sección cine" />
   <Card.ImgOverlay>
     <Card.Title className='fuentetitulos textocards'>CINE</Card.Title>
       </Card.ImgOverlay>
   </Card>
 
   <Card className="bg-dark text-white my-3">
-  <Card.Img src={espectaculosteatro} alt="Card image"/>
+  <Card.Img src={espectaculosteatro} alt="imagen sección teatro"/>
   <Card.ImgOverlay>
     <Card.Title className='fuentetitulos textocards'>TEATRO</Card.Title>
       
@@ -205,7 +213,7 @@ const Inicio = () => {
           </Col>
           <Col xs={12} md={6}>
           <Card className="bg-dark text-white">
-  <Card.Img src={espectaculosmusica} alt="Card image" />
+  <Card.Img src={espectaculosmusica} alt="imagen sección música" />
   <Card.ImgOverlay>
     <Card.Title className='fuentetitulos textocards'>MUSICA</Card.Title>
      
@@ -213,7 +221,7 @@ const Inicio = () => {
   </Card>
 
   <Card className="bg-dark text-white my-3">
-  <Card.Img src={espectaculostv} alt="Card image" />
+  <Card.Img src={espectaculostv} alt="imagen sección tv" />
   <Card.ImgOverlay>
     <Card.Title className='fuentetitulos textocards'>TV</Card.Title>
        
