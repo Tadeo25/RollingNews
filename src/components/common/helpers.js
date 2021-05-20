@@ -1,5 +1,5 @@
-const validarNombres = (nombres)=> {
-    if (nombres.trim() === "" || nombres.length >= 40 || nombres !== isNaN) {
+const validarNyA = (nombres)=> {
+    if (nombres.trim() === "" || nombres.length >= 30) {
           //   nombres.className = "form-control is-invalid";
       return false;
     } else {
@@ -8,15 +8,6 @@ const validarNombres = (nombres)=> {
     }
 }
 
-const validarApellidos = (apellidos)=> {
-    if (apellidos.trim() === "" || apellidos.length >= 40 || apellidos === Number) {
-          //   nombres.className = "form-control is-invalid";
-      return false;
-    } else {
-     // nombres.className = "form-control is-valid";
-      return true;
-    }
-}
 
 const validarEmail = (mail)=>{
     var expresion = /\w+@\w+\.[a-z]{2,}$/;
@@ -29,7 +20,7 @@ const validarEmail = (mail)=>{
   }
 }
 
-const validardireccion = (direccion)=>{
+const validarCyD = (direccion)=>{
     if(direccion.trim() !== "" && direccion.length <= 50){
         return true;
             } else {
@@ -37,4 +28,20 @@ const validardireccion = (direccion)=>{
             }
 }
 
-export {validarNombres, validarApellidos, validarEmail}
+const validarTyCP = (numeros)=>{
+  if (numeros > 1 && numeros < 9999999999 && numeros !== isNaN){
+    return true;
+  } else{
+    return false;
+  }
+}
+
+const validarCheck = (check)=>{
+  if (check === true) {
+    return true;
+  }else{
+    return false;
+  }
+}
+
+export {validarNyA, validarEmail, validarCyD, validarTyCP, validarCheck}
