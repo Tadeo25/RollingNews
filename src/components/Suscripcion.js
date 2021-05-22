@@ -7,6 +7,7 @@ import {
   validarTyCP,
   validarCheck,
 } from "./common/helpers";
+import Swal from 'sweetalert2';
 
 const Suscripcion = (props) => {
   const [nombres, setNombres] = useState("");
@@ -34,6 +35,13 @@ const Suscripcion = (props) => {
       console.log("mail correcto");
     } else {
       console.log("mail inválido");
+      Swal.fire({
+        title: "Error",
+        text: "Debe completar correctamente el formulario",
+        icon: "error",
+        confirmButtonColor: "#FF0040",
+        confirmButtonText: "Aceptar",
+      });
     }
   };
   return (
@@ -109,6 +117,9 @@ const Suscripcion = (props) => {
                     onChange={(e) => setTelefono(e.target.value)}
                     value={telefono}
                   />
+                  <Form.Text className="text-muted">
+     Sólo Números. Ej: 381123123
+    </Form.Text>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="codigoPostal">
@@ -119,6 +130,9 @@ const Suscripcion = (props) => {
                     onChange={(e) => setCPostal(e.target.value)}
                     value={cPostal}
                   />
+                  <Form.Text className="text-muted">
+      Sólo Números. Ej: 4000
+    </Form.Text>
                 </Form.Group>
               </Form.Row>
 
