@@ -7,7 +7,8 @@ import {
   validarTyCP,
   validarCheck,
 } from "./common/helpers";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import emailjs from "emailjs-com";
 
 const Suscripcion = (props) => {
   const [nombres, setNombres] = useState("");
@@ -32,6 +33,38 @@ const Suscripcion = (props) => {
       validarTyCP(cPostal) &&
       validarCheck(checkbox) === true
     ) {
+      emailjs
+        .sendForm(
+          "service_zrczdis",
+          "template_xcs5oks",
+          e.target,
+          "user_Hq5XxTd58WfUgtuXVURIr"
+        )
+        .then(
+          (result) => {
+            Swal.fire({
+              title: "¡Gracias!",
+              text: "Suscripción Realizada Correctamente",
+              icon: "success",
+              confirmButtonColor: "#007bff",
+              confirmButtonText: "Entendido!",
+            });
+            console.log(result.status);
+            if (result.status === 200) {
+              setNombres("");
+              setApellidos("");
+              setMail("");
+              setCiudad("");
+              setDireccion("");
+              setTelefono(0);
+              setCPostal(0);
+              setCheckbox(false);
+            }
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
       console.log("mail correcto");
     } else {
       console.log("mail inválido");
@@ -44,6 +77,7 @@ const Suscripcion = (props) => {
       });
     }
   };
+
   return (
     <div className="fondo">
       <Container>
@@ -63,6 +97,7 @@ const Suscripcion = (props) => {
                     required
                     onChange={(e) => setNombres(e.target.value)}
                     value={nombres}
+                    name="from_name"
                   />
                 </Form.Group>
 
@@ -74,6 +109,7 @@ const Suscripcion = (props) => {
                     requiredb
                     onChange={(e) => setApellidos(e.target.value)}
                     value={apellidos}
+                    name="from_surname"
                   />
                 </Form.Group>
               </Form.Row>
@@ -83,29 +119,35 @@ const Suscripcion = (props) => {
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="su dirección de mail"
+                    placeholder="juanperez@gmail.com"
                     required
                     onChange={(e) => setMail(e.target.value)}
                     value={mail}
+                    name="from_email"
                   />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="ciudad">
                   <Form.Label>Ciudad</Form.Label>
                   <Form.Control
+                  type="text"
+                  placeholder="S.M. de Tucumán"
                     required
                     onChange={(e) => setCiudad(e.target.value)}
                     value={ciudad}
+                    name="from_city"
                   />
                 </Form.Group>
               </Form.Row>
               <Form.Group>
                 <Form.Label>Dirección</Form.Label>
                 <Form.Control
+                type="text"
                   placeholder="Gral Paz 576"
                   required
                   onChange={(e) => setDireccion(e.target.value)}
                   value={direccion}
+                  name="from_direction"
                 />
               </Form.Group>
               <Form.Row>
@@ -116,10 +158,11 @@ const Suscripcion = (props) => {
                     required
                     onChange={(e) => setTelefono(e.target.value)}
                     value={telefono}
+                    name="from_phone"
                   />
                   <Form.Text className="text-muted">
-     Sólo Números. Ej: 381123123
-    </Form.Text>
+                    Sólo Números. Ej: 381123123
+                  </Form.Text>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="codigoPostal">
@@ -129,10 +172,11 @@ const Suscripcion = (props) => {
                     required
                     onChange={(e) => setCPostal(e.target.value)}
                     value={cPostal}
+                    name="from_zip"
                   />
                   <Form.Text className="text-muted">
-      Sólo Números. Ej: 4000
-    </Form.Text>
+                    Sólo Números. Ej: 4000
+                  </Form.Text>
                 </Form.Group>
               </Form.Row>
 
@@ -146,7 +190,7 @@ const Suscripcion = (props) => {
                 />
               </Form.Group>
 
-              <Button className="mb-5" variant="primary" type="submit">
+              <Button bsClass="colorbtn" className="mb-5" type="submit">
                 Suscribirme
               </Button>
             </Form>
