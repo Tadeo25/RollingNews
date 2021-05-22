@@ -65,7 +65,7 @@ const Suscripcion = (props) => {
             console.log(error.text);
           }
         );
-      console.log("mail correcto");
+      
     } else {
       console.log("mail inválido");
       Swal.fire({
