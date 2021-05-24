@@ -1,11 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css' 
-import SeccionNoticias from './components/SeccionNoticias'
+import DetalleNoticias from './components/DetalleNoticia';
+
 
 function App() {
   return (
-    <div >
-     <SeccionNoticias />
+    <div>
+     <DetalleNoticias />
     </div>
   );
 }
