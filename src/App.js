@@ -13,6 +13,9 @@ function App() {
         <Route exact path='/' >
         <Inicio></Inicio>
         </Route>
+        <Route exact path=''></Route>
+        <Route exact path=''></Route>
+        <Route exact path=''></Route>
       </Switch>
     </Router>
   );
