@@ -1,5 +1,4 @@
 import './App.css';
-<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.min.css' ;
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navegacion from './components/comun/Navegacion';
@@ -22,13 +21,6 @@ function App() {
         <Route exact path=''></Route>
       </Switch>
     </Router>
-=======
-import 'bootstrap/dist/css/bootstrap.min.css';
-import DetalleNoticias from './components/DetalleNoticia';
-function App() {
-  return (
-<DetalleNoticias />
->>>>>>> Detalle-Noticia
   );
 }
 
