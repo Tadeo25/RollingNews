@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
 import Inicio from "./components/Inicio";
-//import SeccionNoticias from './components/SeccionNoticias'
+import SeccionNoticias from './components/SeccionNoticia'
 import Suscripcion from "./components/Suscripcion";
 import { useState, useEffect } from "react";
 import Clima from "./components/Clima";
@@ -42,7 +42,7 @@ function App() {
           <Inicio></Inicio>
         </Route>
         <Route exact path="/Seccion">
-          {/* <SeccionNoticias></SeccionNoticias> */}
+          <SeccionNoticias></SeccionNoticias>
         </Route>
         <Route exact path="/suscripcion">
           <Suscripcion></Suscripcion>

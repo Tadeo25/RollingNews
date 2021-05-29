@@ -5,6 +5,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+import publicidad2 from "./img/publicidad3.gif";
 
 export default function SeccionNoticias() {
   return (
@@ -38,6 +39,13 @@ export default function SeccionNoticias() {
             </Card.Body>
           </Card>
         </div>
+
+        <img
+              className="tex-center my-3 d-none d-lg-block w-25"
+              src={publicidad2}
+              alt="gif publicidad google"
+        />
+
         <div className="d-flex flex-column">
           <Card style={{ width: "18rem" }} className="m-3">
             <Card.Img
@@ -67,6 +75,9 @@ export default function SeccionNoticias() {
           </Card>
         </div>
       </div>
+
+      {/* Swiper */}
+
       <div>
         <h1 className="ml-5">Ultimas noticias</h1>
       <Swiper
