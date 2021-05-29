@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import destacado1 from "./img/vacunas_principal.jpg";
 import destacado2 from "./img/estacionDeServicio_principal.jpg";
