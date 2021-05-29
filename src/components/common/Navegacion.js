@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
-import Logo from "../img/Logo.png";
+import Logo4 from "../img/Logo4.gif";
 import { NavLink } from "react-router-dom";
 
 const Navegacion = () => {
@@ -8,7 +8,7 @@ const Navegacion = () => {
     <div>
       <Navbar expand="lg" variant="dark">
         <Navbar.Brand href="/">
-          <Image src={Logo} fluid />
+          <Image src={Logo4} fluid />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
