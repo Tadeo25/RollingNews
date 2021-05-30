@@ -1,12 +1,13 @@
 import React from 'react';
-import {Form,Button, Card, Container} from 'react-bootstrap';
+import {Form,Button,Container,Row,Col} from 'react-bootstrap';
 
 const Login = () => {
     return ( 
-      <Container className='my-5 '>
-      <Card className='justify-content-center d-flex align-items-center'>
-        <Form className='Form my-5'>
-          <h3 className='text-center mb-3'>Iniciar Sesion</h3>
+      <Container>
+        <Row>
+          <Col md={{span:6,offset:3}} >
+        <Form className= 'my-4'>
+          <h1 className='text-center fuentetitulos text-dark mb-4'>Iniciar Sesion</h1>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email</Form.Label>
     <Form.Control type="email" placeholder="Ingrese su Email" />
@@ -25,7 +26,8 @@ const Login = () => {
     Ingresar
   </Button>
 </Form>
-</Card>
+</Col>
+</Row>
 </Container>
     );
 };
