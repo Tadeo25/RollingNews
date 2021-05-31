@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
+import EditarNoticia from './components/EditarNoticia';
 function App() {
   const URL = process.env.REACT_APP_API_URL
 
@@ -33,9 +34,13 @@ function App() {
        <Route exact path='/lista'>
          <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>
        </Route>
+       <Route exact path='/editarnoticia/:_id'>
+         <EditarNoticia></EditarNoticia>
+       </Route>
      </Switch>
    </Router>
+
   );
-}
+  }
 
 export default App;

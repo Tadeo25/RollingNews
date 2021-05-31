@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import Swal from "sweetalert2";
+import {Link} from 'react-router-dom'
 
 export default function Noticias(props) {
   const eliminarNoticia = (codigo) => {
@@ -47,9 +48,10 @@ export default function Noticias(props) {
       <ListGroup.Item className="d-flex justify-content-between">
         <p>{props.objectNoticia.tituloNoticia}</p>
         <div>
-          <Button variant="warning" className="mr-3">
+          <Link className='btn btn-warning mr-3' to={`/editarnoticia/${props.objectNoticia._id}`}> Editar</Link>
+          {/*<Button variant="warning" className="mr-3">
             Editar
-          </Button>
+  </Button>*/}
           <Button 
           variant="danger"
           onClick={()=> eliminarNoticia(props.objectNoticia._id)}
