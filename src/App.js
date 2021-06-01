@@ -35,7 +35,7 @@ function App() {
          <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>
        </Route>
        <Route exact path='/editarnoticia/:_id'>
-         <EditarNoticia></EditarNoticia>
+         <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
        </Route>
      </Switch>
    </Router>

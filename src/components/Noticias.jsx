@@ -49,9 +49,7 @@ export default function Noticias(props) {
         <p>{props.objectNoticia.tituloNoticia}</p>
         <div>
           <Link className='btn btn-warning mr-3' to={`/editarnoticia/${props.objectNoticia._id}`}> Editar</Link>
-          {/*<Button variant="warning" className="mr-3">
-            Editar
-  </Button>*/}
+       
           <Button 
           variant="danger"
           onClick={()=> eliminarNoticia(props.objectNoticia._id)}

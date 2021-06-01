@@ -13,8 +13,9 @@ const AgregarNoticia = (props) => {
     const URL = process.env.REACT_APP_API_URL;
 
     const leerCategoria = (e) => {
-        setCategoria.apply(e.target.value);
+        setCategoria(e.target.value);
     };
+
     const handleSubmit = async (e) =>{
         e.preventDefault();
 
@@ -95,50 +96,57 @@ const AgregarNoticia = (props) => {
               <div className="text-center my-4">
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Deportes"
+                  name="categoria"
                   value="deportes"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Politica"
+                  name="categoria"
                   value="politica"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Economia"
+                  name="categoria"
                   value="economia"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Culturales"
+                  name="categoria"
                   value="culturales"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Sociales"
+                  name="categoria"
                   value="sociales"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Policiales"
+                  name="categoria"
                   value="policiales"
                   onChange={leerCategoria}
                   ></Form.Check>
                   <Form.Check
                   inline
-                  Type="radio"
+                  type="radio"
                   label="Cientifica"
+                  name="categoria"
                   value="cientifica"
                   onChange={leerCategoria}
                   ></Form.Check>
