@@ -1,50 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@800&display=swap");
 .bgcard {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .bgtitulos {
-  background-color: #eaeef2;
-  background-image: linear-gradient(72deg, #eaeef2 0%, #036393 100%);
+    background-color: #eaeef2;
+    background-image: linear-gradient(72deg, #eaeef2 0%, #036393 100%);
 }
 
 .colortext {
-  color: #5858fa;
+    color: #5858fa;
 }
 
 .fondo {
-  background-color: #e6e6e6;
-  background-image: linear-gradient(0deg, #e6e6e6 0%, #fafafa 100%);
+    background-color: #e6e6e6;
+    background-image: linear-gradient(0deg, #e6e6e6 0%, #fafafa 100%);
 }
 
 .fuentetitulos {
-  font-family: "Newsreader", serif;
+    font-family: "Newsreader", serif;
 }
 
 @media all and (min-width: 992px) {
-  .altura {
-    max-height: 160px;
-  }
+    .altura {
+        max-height: 160px;
+    }
 }
 
 .textocards {
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  font-size: 10vw;
-  font-weight: 100;
-  text-align: center;
-  width: 100%;
-  line-height: 1;
-  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-    -2px 2px 0 #000, 2px 2px 0 #000;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 10vw;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
+
 
 /* Navbar*/
 
 .navbar {
-  background-color: #163860;
+    background-color: #163860;
 }
 
 .navbar-brand {
-  max-width: 100px;
+    max-width: 100px;
+}
+
+
+/*Footer */
+
+.footer {
+    background-color: #163860;
 }
