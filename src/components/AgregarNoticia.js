@@ -8,6 +8,7 @@ const AgregarNoticia = (props) => {
     const [descripcionNoticia, setDescripcionNoticia] = useState("");
     const [cuerpoNoticia, setCuerpoNoticia] = useState("");
     const [categoria, setCategoria] = useState("");
+    const [imagen, setImagen] = useState("");
     const [error, setError] = useState(false);
 
     const URL = process.env.REACT_APP_API_URL;
@@ -23,7 +24,8 @@ const AgregarNoticia = (props) => {
             tituloNoticia.trim() !== "" &&
             descripcionNoticia !== "" &&
             cuerpoNoticia !== "" &&
-            categoria !== ""
+            categoria !== "" &&
+            imagen !== ""
         ){
             setError(false);
 
@@ -32,6 +34,7 @@ const AgregarNoticia = (props) => {
                 descripcionNoticia,
                 cuerpoNoticia,
                 categoria,
+                imagen,
 
             };
             try {
@@ -66,11 +69,10 @@ const AgregarNoticia = (props) => {
     return (
       <Container>
           <Form className="my-5" onSubmit={handleSubmit}>
-              <h1 className="my-5">Agregar nueva noticia</h1>
+              <h1 className="jumbotron text-center my-5 bg-success fuentetitulos">Agregar nueva noticia</h1>
               <Form.Group>
-                  <Form.Label>Titulo de la noticia</Form.Label>
+                  <Form.Label><b>Titulo de la noticia</b></Form.Label>
                   <Form.Control
-                  className='my-3'
                       type="text"
                       placeholder="Titulo noticia"
                       required
@@ -78,8 +80,8 @@ const AgregarNoticia = (props) => {
                   ></Form.Control>
               </Form.Group>
               <Form.Group>
+              <Form.Label><b>Descripcion</b></Form.Label>
                   <Form.Control
-                  className='my-3'
                   type="text"
                   placeholder="Descripcion"
                   required
@@ -87,12 +89,21 @@ const AgregarNoticia = (props) => {
                   ></Form.Control>
               </Form.Group>
               <Form.Group>
+              <Form.Label><b>Cuerpo de la noticia</b></Form.Label>
                   <Form.Control
-                  className='my-3'
                   type="text" 
                   placeholder="Cuerpo Noticia"  
                   required               
                   onChange={(e) => setCuerpoNoticia(e.target.value)}
+                  ></Form.Control>
+              </Form.Group>
+              <Form.Group>
+              <Form.Label><b>Link para una imagen</b></Form.Label>
+                  <Form.Control
+                  type="text" 
+                  placeholder="Link de imagen"  
+                  required               
+                  onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>
               </Form.Group>
               <h3 className="text-center mt-4">Categoria</h3>
@@ -154,9 +165,9 @@ const AgregarNoticia = (props) => {
                   onChange={leerCategoria}
                   ></Form.Check>
               </div>
-              <Button variant="danger" type="submit" className="w-100">
-          Guardar
-        </Button>
+              <Button variant="outline-success" type="submit" className="w-100">
+                   <b> Guardar </b>
+              </Button>
         {error === true ? (
           <Alert variant="danger" className="my-5">
             Faltan cargar datos obligatorios
