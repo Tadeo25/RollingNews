@@ -44,4 +44,13 @@ const validarCheck = (check)=>{
   }
 }
 
+const campoRequerido = (valor) => {
+  if (valor.trim() === '') {
+      return false;
+  } else {
+      return true;
+  }
+}
+export { campoRequerido };
+
 export {validarNyA, validarEmail, validarCyD, validarTyCP, validarCheck}
