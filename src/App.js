@@ -10,6 +10,7 @@ import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
 import Clima from "./components/Clima";
+import Error404 from "./components/Error404";
 
 function App() {
   const [temperatura, setTemperatura] = useState(0);
@@ -80,6 +81,9 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
+         <Route exact path="/error404">
+          <Error404></Error404>
+        </Route>
       </Switch>
     </Router>
   );
