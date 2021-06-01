@@ -73,6 +73,7 @@ const AgregarNoticia = (props) => {
                   className='my-3'
                       type="text"
                       placeholder="Titulo noticia"
+                      required
                       onChange={(e) => setTituloNoticia(e.target.value)}
                   ></Form.Control>
               </Form.Group>
@@ -81,6 +82,7 @@ const AgregarNoticia = (props) => {
                   className='my-3'
                   type="text"
                   placeholder="Descripcion"
+                  required
                   onChange={(e) => setDescripcionNoticia(e.target.value)}
                   ></Form.Control>
               </Form.Group>
@@ -88,12 +90,13 @@ const AgregarNoticia = (props) => {
                   <Form.Control
                   className='my-3'
                   type="text" 
-                  placeholder="Cuerpo Noticia"                 
+                  placeholder="Cuerpo Noticia"  
+                  required               
                   onChange={(e) => setCuerpoNoticia(e.target.value)}
                   ></Form.Control>
               </Form.Group>
               <h3 className="text-center mt-4">Categoria</h3>
-              <div className="text-center my-4">
+              <div className="text-center my-4" required>
                   <Form.Check
                   inline
                   type="radio"
