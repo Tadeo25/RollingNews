@@ -45,6 +45,7 @@ function App() {
       const res = await fetch(URL);
       if (res.status === 200) {
       const datos = await res.json();
+      console.log(datos);
       setNoticias(datos);
       }
     } catch (error) {
