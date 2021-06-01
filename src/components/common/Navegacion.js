@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import Logo4 from "../img/Logo4.gif";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navegacion = () => {
   return (
@@ -48,7 +50,7 @@ const Navegacion = () => {
               Login
             </NavLink>
             <NavLink exact={true} to="suscripcion" className="nav-link">
-              Suscripción
+              Suscripción <FontAwesomeIcon icon={faUser} />
             </NavLink>
           </Nav>
         </Navbar.Collapse>

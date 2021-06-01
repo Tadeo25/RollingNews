@@ -95,6 +95,7 @@ const AgregarNoticia = (props) => {
                   placeholder="Cuerpo Noticia"  
                   required               
                   onChange={(e) => setCuerpoNoticia(e.target.value)}
+                  as="textarea" rows={3}
                   ></Form.Control>
               </Form.Group>
               <Form.Group>
@@ -165,7 +166,7 @@ const AgregarNoticia = (props) => {
                   onChange={leerCategoria}
                   ></Form.Check>
               </div>
-              <Button variant="outline-success" type="submit" className="w-100">
+              <Button variant="outline-info" type="submit" className="w-100">
                    <b> Guardar </b>
               </Button>
         {error === true ? (
