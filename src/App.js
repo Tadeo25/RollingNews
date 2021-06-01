@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
+import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
 import SeccionNoticias from './components/SeccionNoticia'
 import Suscripcion from "./components/Suscripcion";
@@ -46,6 +47,7 @@ function App() {
       const res = await fetch(URL);
       if (res.status === 200) {
       const datos = await res.json();
+      console.log(datos);
       setNoticias(datos);
       }
     } catch (error) {
@@ -85,6 +87,7 @@ function App() {
           <Error404></Error404>
         </Route>
       </Switch>
+      <Footer></Footer>
     </Router>
   );
   }
