@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
 import Login from './components/Login';
 import Footer from "./components/common/Footer";
@@ -13,6 +13,7 @@ import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
 import Clima from "./components/Clima";
 import Error404 from "./components/Error404";
+import {isAdmin} from "./components/common/helpers";
 
 function App() {
   const [temperatura, setTemperatura] = useState(0);
@@ -22,6 +23,7 @@ function App() {
 
   const URL = process.env.REACT_APP_API_URL
   const [noticias, setNoticias] = useState([]);
+  console.log(isAdmin());
   
   useEffect(() => {
     consultarClima();
@@ -70,7 +72,9 @@ function App() {
           <Inicio></Inicio>
         </Route>
         <Route exact path='/login'>
-        <Login></Login>
+        { isAdmin() 
+          ? <Redirect to='/lista'/>
+          : <Login></Login>}
         </Route>
         <Route exact path="/Seccion">
           <SeccionNoticias></SeccionNoticias>
@@ -81,13 +85,16 @@ function App() {
         <Route exact path='/agregarNoticia'>
            <AgregarNoticia consultarAPI={consultarAPI}></AgregarNoticia>
          </Route>
-         <Route exact path='/lista'>
-           <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>
-         </Route>
+          <Route exact path='/lista'>
+           { isAdmin() 
+              ? <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>
+              : <Redirect to='/login'/>}
+          </Route> 
+     
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
-         <Route exact path="/error404">
+         <Route path="*">
           <Error404></Error404>
         </Route>
       </Switch>
