@@ -11,7 +11,7 @@ const AgregarNoticia = (props) => {
     const [imagen, setImagen] = useState("");
     const [error, setError] = useState(false);
 
-    const URL = process.env.REACT_APP_API_URL;
+    const URL = process.env.REACT_APP_API_URL+"/noticias";
 
     const leerCategoria = (e) => {
         setCategoria(e.target.value);

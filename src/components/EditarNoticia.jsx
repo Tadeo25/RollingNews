@@ -6,7 +6,7 @@ import {campoRequerido} from './common/helpers'
 
 const EditarNoticia = (props) => {
   const[noticia,setNoticia]=useState({});
-  const URL = process.env.REACT_APP_API_URL
+  const URL = process.env.REACT_APP_API_URL+'/noticias';
   const {_id} = useParams();
   const tituloNoticiaRef=useRef("");
   const descripcionNoticiaRef=useRef("");
