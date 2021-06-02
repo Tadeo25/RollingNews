@@ -11,6 +11,7 @@ const EditarNoticia = (props) => {
   const tituloNoticiaRef=useRef("");
   const descripcionNoticiaRef=useRef("");
   const cuerpoNoticiaRef=useRef("");
+  const imagenRef=useRef("");
   const[categoria,setCategoria] = useState("");
   const [error,setError]= useState(false);
 
@@ -47,6 +48,7 @@ const EditarNoticia = (props) => {
     if(campoRequerido(tituloNoticiaRef.current.value) && 
     (descripcionNoticiaRef.current.value)&& 
     (cuerpoNoticiaRef.current.value) && 
+    (imagenRef.current.value) &&
     campoRequerido(_categoria)){
    setError(false);
    try {
@@ -54,6 +56,7 @@ const EditarNoticia = (props) => {
        tituloNoticia: tituloNoticiaRef.current.value,
        descripcionNoticia: descripcionNoticiaRef.current.value,
        cuerpoNoticia: cuerpoNoticiaRef.current.value,
+       imagen: imagenRef.current.value,
        categoria: _categoria
      };
 
@@ -85,9 +88,8 @@ setError(true);
   return (
     <Container>
       <Form className="my-5"onSubmit={handleSubmit} >
-        <h1 className="my-4 fuentetitulos text-dark text-center">Editar Noticia</h1>
+        <h1 className="my-4 fuentetitulos jumbotron text-center my-5 bg-warning">Editar Noticia</h1>
         <Form.Group>
-          <Form.Label>Titulo de la noticia</Form.Label>
           <Form.Control
             className="my-3"
             type="text"
@@ -112,6 +114,16 @@ setError(true);
             placeholder="Cuerpo Noticia"
             defaultValue={noticia.cuerpoNoticia}
             ref={cuerpoNoticiaRef}
+            as="textarea" rows={3}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            className="my-3"
+            type="text"
+            placeholder="Link de imagen"
+            defaultValue={noticia.imagen}
+            ref={imagenRef}
           ></Form.Control>
         </Form.Group>
         <h3 className="text-center mt-4">Categoria</h3>
@@ -180,8 +192,8 @@ setError(true);
             defaultChecked={noticia.categoria && noticia.categoria ==='cientifica'}
           ></Form.Check>
         </div>
-        <Button variant="primary" type="submit">
-          Guardar
+        <Button variant="outline-info" type="submit" className="w-100">
+        <b> Guardar </b>
         </Button>
         {error === true ? (
           <Alert variant="danger" className="my-5">

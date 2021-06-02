@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
 import Login from './components/Login';
+import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
 import SeccionNoticias from './components/SeccionNoticia'
 import Suscripcion from "./components/Suscripcion";
@@ -11,6 +12,7 @@ import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
 import Clima from "./components/Clima";
+import Error404 from "./components/Error404";
 
 function App() {
   const [temperatura, setTemperatura] = useState(0);
@@ -46,6 +48,7 @@ function App() {
       const res = await fetch(URL);
       if (res.status === 200) {
       const datos = await res.json();
+      console.log(datos);
       setNoticias(datos);
       }
     } catch (error) {
@@ -84,7 +87,11 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
+         <Route exact path="/error404">
+          <Error404></Error404>
+        </Route>
       </Switch>
+      <Footer></Footer>
     </Router>
   );
   }
