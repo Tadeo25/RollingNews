@@ -19,6 +19,9 @@ import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
 import DetalleNoticias from './components/DetalleNoticia';
+import DetalleDeportes from './components/DetalleNoticiaDeportes';
+import DetalleTecnologia from './components/DetalleNoticiaTecnologia';
+import DetalleEspectaculo from './components/DetalleNoticiaEspectaculo';
 import Clima from "./components/Clima";
 import Error404 from "./components/Error404";
 import {isAdmin} from "./components/common/helpers";
@@ -121,11 +124,20 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
-         <Route path="*">
+         {/* <Route path="*">
           <Error404></Error404>
-        </Route>
+        </Route> */}
         <Route exact path="/Detalle">
           <DetalleNoticias></DetalleNoticias>
+        </Route>
+        <Route exact path="/Detalle/Deportes">
+          <DetalleDeportes></DetalleDeportes>
+        </Route>
+        <Route exact path="/Detalle/Tecnologia">
+          <DetalleTecnologia></DetalleTecnologia>
+        </Route>
+        <Route exact path="/Detalle/Espectaculo">
+          <DetalleEspectaculo></DetalleEspectaculo>
         </Route>
       </Switch>
       <Footer></Footer>

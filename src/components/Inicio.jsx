@@ -1,14 +1,9 @@
 import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import destacado1 from "./img/vacunas_principal.jpg";
-import destacado2 from "./img/estacionDeServicio_principal.jpg";
 import banner1 from "./img/coronavirus.jpg";
 import banner2 from "./img/coronavirus2.gif";
 import banner3 from "./img/coronavirus3.gif";
-import espectaculoscine from "./img/espectaculos_cine.jpg";
-import espectaculostv from "./img/espectaculos_tv.jpg";
-import espectaculosmusica from "./img/espectaculos_musica.jpg";
-import espectaculosteatro from "./img/espectaculos_teatro.jpg";
+import { Link } from "react-router-dom";
 import publicidad1 from "./img/publicidad1.gif";
 import publicidad2 from "./img/publicidad2.gif";
 import "../App.css";
@@ -78,12 +73,13 @@ const Inicio = () => {
               src={noticia0.imagen}
               alt="Imagen noticia principal"
             />
-
-            <Card.Body className="shadow bgcard colortext rounded border">
-              <Card.Title className="font-weight-bold fuentetitulos">
-                <h4>{noticia0.tituloNoticia}</h4>{" "}
-              </Card.Title>
-            </Card.Body>
+            <Link to={`/Detalle`} className="text-decoration-none textcolor">
+              <Card.Body className="shadow bgcard colortext rounded border">
+                <Card.Title className="font-weight-bold fuentetitulos">
+                  <h4>{noticia0.tituloNoticia}</h4>{" "}
+                </Card.Title>
+              </Card.Body>
+            </Link>
           </Col>
           <Col xs={12} md={4}>
             <img
@@ -101,9 +97,7 @@ const Inicio = () => {
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
-              <Card.Text>
-                {noticia1.tituloNoticia}
-              </Card.Text>
+              <Card.Text>{noticia1.tituloNoticia}</Card.Text>
             </Card.Body>
           </Col>
 
@@ -115,9 +109,7 @@ const Inicio = () => {
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
-              <Card.Text>
-                {noticia2.tituloNoticia}
-              </Card.Text>
+              <Card.Text>{noticia2.tituloNoticia}</Card.Text>
             </Card.Body>
           </Col>
 
@@ -128,9 +120,7 @@ const Inicio = () => {
               alt="imagen sección principal noticia 4"
             />
             <Card.Body className="shadow bgcard colortext rounded border">
-              <Card.Text>
-                {noticia3.tituloNoticia}
-              </Card.Text>
+              <Card.Text>{noticia3.tituloNoticia}</Card.Text>
             </Card.Body>
           </Col>
         </Row>
@@ -144,9 +134,11 @@ const Inicio = () => {
                 <Card.Img variant="top" src={noticia4.imagen} />
               </Col>
               <Col>
-                <Card.Body className="bgcard">
-                  <Card.Title>{noticia4.tituloNoticia}</Card.Title>
-                </Card.Body>
+                <Link to={`/Detalle/Deportes`} className="text-decoration-none">
+                  <Card.Body className="bgcard">
+                    <Card.Title>{noticia4.tituloNoticia}</Card.Title>
+                  </Card.Body>
+                </Link>
               </Col>
             </Row>
           </Col>
@@ -157,9 +149,11 @@ const Inicio = () => {
                 <Card.Img variant="top" src={noticia5.imagen} />
               </Col>
               <Col>
-                <Card.Body className="bgcard">
-                  <Card.Title>{noticia5.tituloNoticia}</Card.Title>
-                </Card.Body>
+                <Link className="text-decoration-none">
+                  <Card.Body className="bgcard">
+                    <Card.Title>{noticia5.tituloNoticia}</Card.Title>
+                  </Card.Body>
+                </Link>
               </Col>
             </Row>
           </Col>
@@ -185,12 +179,11 @@ const Inicio = () => {
               src={noticia6.imagen}
               alt="Imagen principal sección tecnología"
             />
-
-            <Card.Body className="shadow bgcard rounded border">
-              <Card.Text>
-                {noticia6.tituloNoticia}
-              </Card.Text>
-            </Card.Body>
+            <Link to={`/Detalle/Tecnologia`} className="text-decoration-none">
+              <Card.Body className="shadow bgcard rounded border">
+                <Card.Text>{noticia6.tituloNoticia}</Card.Text>
+              </Card.Body>
+            </Link>
           </Col>
           <Col xs={12} md={5}>
             <Row>
@@ -200,12 +193,11 @@ const Inicio = () => {
                   src={noticia7.imagen}
                   alt="Imagen 2 sección tecnología"
                 />
-
-                <Card.Body className="shadow bgcard rounded border">
-                  <Card.Text>
-                    {noticia7.tituloNoticia}
-                  </Card.Text>
-                </Card.Body>
+                <Link className="text-decoration-none">
+                  <Card.Body className="shadow bgcard rounded border">
+                    <Card.Text>{noticia7.tituloNoticia}</Card.Text>
+                  </Card.Body>
+                </Link>
               </Col>
               <Col xs={12} md={2} lg={4}></Col>
               <Col xs={12} md={10} lg={8} className="my-2">
@@ -214,12 +206,11 @@ const Inicio = () => {
                   src={noticia8.imagen}
                   alt="Imagen 3 sección tecnología"
                 />
-
-                <Card.Body className="shadow bgcard rounded border">
-                  <Card.Text>
-                    {noticia8.tituloNoticia}
-                  </Card.Text>
-                </Card.Body>
+                <Link>
+                  <Card.Body className="shadow bgcard rounded border">
+                    <Card.Text>{noticia8.tituloNoticia}</Card.Text>
+                  </Card.Body>
+                </Link>
               </Col>
               <Col xs={12} md={2} lg={4}></Col>
             </Row>
@@ -231,7 +222,11 @@ const Inicio = () => {
         <Row>
           <Col xs={12} md={6}>
             <Card className="bg-dark text-white">
-              <Card.Img src={noticia12.imagen} alt="imagen sección cine" className="imgcardsEspectaculo" />
+              <Card.Img
+                src={noticia12.imagen}
+                alt="imagen sección cine"
+                className="imgcardsEspectaculo"
+              />
               <Card.ImgOverlay>
                 <Card.Title className="fuentetitulos textocards">
                   {noticia12.tituloNoticia}
@@ -240,7 +235,11 @@ const Inicio = () => {
             </Card>
 
             <Card className="bg-dark text-white my-3">
-              <Card.Img src={noticia10.imagen} alt="imagen sección teatro" className="imgcardsEspectaculo"/>
+              <Card.Img
+                src={noticia10.imagen}
+                alt="imagen sección teatro"
+                className="imgcardsEspectaculo"
+              />
               <Card.ImgOverlay>
                 <Card.Title className="fuentetitulos textocards">
                   {noticia10.tituloNoticia}
@@ -249,19 +248,31 @@ const Inicio = () => {
             </Card>
           </Col>
           <Col xs={12} md={6}>
-            <Card className="bg-dark text-white">
-              <Card.Img src={noticia9.imagen} alt="imagen sección música" className="imgcardsEspectaculo"/>
-              <Card.ImgOverlay>
-                <Card.Title className="fuentetitulos textocards">
-                  {noticia9.tituloNoticia}
-                </Card.Title>
-              </Card.ImgOverlay>
-            </Card>
+            <Link to={`/Detalle/Espectaculo`} className="text-decoration-none">
+              <Card className="bg-dark text-white">
+                <Card.Img
+                  src={noticia9.imagen}
+                  alt="imagen sección música"
+                  className="imgcardsEspectaculo"
+                />
+                <Card.ImgOverlay>
+                  <Card.Title className="fuentetitulos textocards">
+                    {noticia9.tituloNoticia}
+                  </Card.Title>
+                </Card.ImgOverlay>
+              </Card>
+            </Link>
 
             <Card className="bg-dark text-white my-3">
-              <Card.Img src={noticia11.imagen} alt="imagen sección tv" className="imgcardsEspectaculo"/>
+              <Card.Img
+                src={noticia11.imagen}
+                alt="imagen sección tv"
+                className="imgcardsEspectaculo"
+              />
               <Card.ImgOverlay>
-                <Card.Title className="fuentetitulos textocards">{noticia11.tituloNoticia}</Card.Title>
+                <Card.Title className="fuentetitulos textocards">
+                  {noticia11.tituloNoticia}
+                </Card.Title>
               </Card.ImgOverlay>
             </Card>
           </Col>

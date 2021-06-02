@@ -13,8 +13,8 @@ export default function DetalleNoticias() {
     const res = await fetch(URL);
     const resultado = await res.json();
     console.log(res);
-    console.log(resultado[0]);
-    setNoticia0(resultado[0]);
+    console.log(resultado[8]);
+    setNoticia0(resultado[8]);
   };
 return (
   <div className="d-flex justify-content center">

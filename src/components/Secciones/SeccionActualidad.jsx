@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -34,6 +34,7 @@ export default function SeccionNoticias() {
     <>
       <div className="container d-flex justify-content-around">
       <div className="d-flex flex-column">
+        <Link to={`/Detalle`} className="text-decoration-none">
           <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
             <Card.Img variant="top" src={noticia0.imagen} className="rounded border-bottom imgcards" />
             <Card.Body className="shadow bgcard colortext">
@@ -41,6 +42,8 @@ export default function SeccionNoticias() {
               <Card.Text>{noticia0.descripcionNoticia}</Card.Text>
             </Card.Body>
           </Card>
+        
+        </Link>
           <Card style={{ width: "18rem" }} className="m-3 rounded border stylecards">
             <Card.Img variant="top" src={noticia1.imagen} className="rounded border-bottom imgcards"/>
             <Card.Body className="shadow bgcard colortext">

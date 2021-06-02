@@ -52,7 +52,7 @@
     line-height: 1;
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-
+/* Seccion de noticias */
 .stylecards{
     width: 300px;
     height: 520px;
@@ -64,6 +64,11 @@
 }
 .imgcards{
     height: 250px;
+}
+/* Detalle noticia */
+.imgdetalle{
+    width: 700px;
+    height: 750px;
 }
 /* Navbar*/
 
@@ -101,3 +106,4 @@ html {
 .footer {
     background-color: #163860;
 }
+
