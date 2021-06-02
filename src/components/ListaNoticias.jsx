@@ -2,6 +2,7 @@ import React from "react";
 import { Container, ListGroup } from "react-bootstrap";
 import Noticias from "./Noticias";
 
+
 export default function ListaNoticias(props) {
   return (
     <Container>

@@ -90,7 +90,6 @@ setError(true);
       <Form className="my-5"onSubmit={handleSubmit} >
         <h1 className="my-4 fuentetitulos jumbotron text-center my-5 bg-warning">Editar Noticia</h1>
         <Form.Group>
-          <Form.Label>Titulo de la noticia</Form.Label>
           <Form.Control
             className="my-3"
             type="text"
@@ -115,6 +114,7 @@ setError(true);
             placeholder="Cuerpo Noticia"
             defaultValue={noticia.cuerpoNoticia}
             ref={cuerpoNoticiaRef}
+            as="textarea" rows={3}
           ></Form.Control>
         </Form.Group>
         <Form.Group>
@@ -192,7 +192,7 @@ setError(true);
             defaultChecked={noticia.categoria && noticia.categoria ==='cientifica'}
           ></Form.Check>
         </div>
-        <Button variant="outline-warning" type="submit" className="w-100">
+        <Button variant="outline-info" type="submit" className="w-100">
         <b> Guardar </b>
         </Button>
         {error === true ? (
