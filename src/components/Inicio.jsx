@@ -206,7 +206,7 @@ const Inicio = () => {
                   src={noticia8.imagen}
                   alt="Imagen 3 sección tecnología"
                 />
-                <Link>
+                <Link className="text-decoration-none">
                   <Card.Body className="shadow bgcard rounded border">
                     <Card.Text>{noticia8.tituloNoticia}</Card.Text>
                   </Card.Body>

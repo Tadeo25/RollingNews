@@ -124,9 +124,6 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
-         {/* <Route path="*">
-          <Error404></Error404>
-        </Route> */}
         <Route exact path="/Detalle">
           <DetalleNoticias></DetalleNoticias>
         </Route>
@@ -138,6 +135,9 @@ function App() {
         </Route>
         <Route exact path="/Detalle/Espectaculo">
           <DetalleEspectaculo></DetalleEspectaculo>
+        </Route>
+         <Route path="*">
+          <Error404></Error404>
         </Route>
       </Switch>
       <Footer></Footer>

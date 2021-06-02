@@ -13,6 +13,10 @@ export default function SeccionNoticias() {
   const [noticia1, setNoticia1] = useState({});
   const [noticia2, setNoticia2] = useState({});
   const [noticia3, setNoticia3] = useState({});
+  const [noticia4, setNoticia4] = useState({});
+  const [noticia5, setNoticia5] = useState({});
+  const [noticia6, setNoticia6] = useState({});
+  const [noticia7, setNoticia7] = useState({});
   const URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
     consultarApi();
@@ -27,6 +31,10 @@ export default function SeccionNoticias() {
     setNoticia1(resultado[21]);
     setNoticia2(resultado[22]);
     setNoticia3(resultado[23]);
+    setNoticia4(resultado[48]);
+    setNoticia5(resultado[49]);
+    setNoticia6(resultado[50]);
+    setNoticia7(resultado[51]);
   };
 
   return (
@@ -88,96 +96,49 @@ export default function SeccionNoticias() {
           className="p-5 m-5 bg-warning"
         >
           <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
+            <Card style={{ width: "18rem" }} className="m-3 styleswipper">
               <Card.Img
                 variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
+                src={noticia4.imagen}
               />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+                <Card.Title>{noticia4.tituloNoticia}</Card.Title>
               </Card.Body>
             </Card>
           </SwiperSlide>
           <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
+            <Card style={{ width: "18rem" }} className="m-3 styleswipper">
               <Card.Img
                 variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
+                src={noticia5.imagen}
               />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+                <Card.Title>{noticia5.tituloNoticia}</Card.Title>
               </Card.Body>
             </Card>
           </SwiperSlide>
           <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
+            <Card style={{ width: "18rem" }} className="m-3 styleswipper">
               <Card.Img
                 variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
+                src={noticia6.imagen}
               />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+                <Card.Title>{noticia6.tituloNoticia}</Card.Title>
               </Card.Body>
             </Card>
           </SwiperSlide>
           <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
+            <Card style={{ width: "18rem" }} className="m-3 styleswipper">
               <Card.Img
                 variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
+                src={noticia7.imagen}
               />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+                <Card.Title>{noticia7.tituloNoticia}</Card.Title>
               </Card.Body>
             </Card>
           </SwiperSlide>
-          <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
-              <Card.Img
-                variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3">
-              <Card.Img
-                variant="top"
-                src="https://productoraudiovisualbarcelona.com/wp-content/uploads/2018/02/fotografia-eventos-exposiciones-785x510.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </SwiperSlide>
-          ...
         </Swiper>
       </div>
     </>
