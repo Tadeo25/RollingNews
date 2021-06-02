@@ -27,8 +27,8 @@ const Login = (props) => {
         console.log(response);
         console.log(response.body);
         if (response.ok) {
-          
-          props.history.push('/lista');
+        localStorage.setItem('auth','true')
+        window.location.replace('/lista');
         }else {
               setError(true);
         
