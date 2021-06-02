@@ -61,6 +61,10 @@
     width: 400px;
     height: 350px;
 }
+.bg-swipper{
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
 .stylecards:hover {
     box-shadow: 45px 25px 25px black;
     transform: translate(5px, 5px);

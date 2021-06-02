@@ -112,7 +112,7 @@ export default function SeccionNoticias() {
           scrollbar={{ draggable: true }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
-          className="p-5 m-5 bg-warning"
+          className="p-5 m-5 bg-swipper"
         >
           <SwiperSlide>
             <Card style={{ width: "18rem" }} className="m-3 styleswipper">
