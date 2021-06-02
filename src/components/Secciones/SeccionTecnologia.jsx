@@ -22,11 +22,11 @@ export default function SeccionNoticias() {
     const res = await fetch(URL);
     const resultado = await res.json();
     console.log(res);
-    console.log(resultado[0]);
-    setNoticia0(resultado[0]);
-    setNoticia1(resultado[1]);
-    setNoticia2(resultado[2]);
-    setNoticia3(resultado[3]);
+    console.log(resultado[8]);
+    setNoticia0(resultado[8]);
+    setNoticia1(resultado[9]);
+    setNoticia2(resultado[10]);
+    setNoticia3(resultado[11]);
   };
 
   return (

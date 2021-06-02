@@ -32,7 +32,7 @@ export default function SeccionNoticias() {
   return (
     <>
       <div className="container d-flex justify-content-around">
-        <div className="d-flex flex-column">
+      <div className="d-flex flex-column">
           <Card style={{ width: "18rem" }} className="m-3">
             <Card.Img variant="top" src={noticia0.imagen} />
             <Card.Body>
