@@ -14,7 +14,7 @@ export default function SeccionNoticias() {
   const [noticia1, setNoticia1] = useState({});
   const [noticia2, setNoticia2] = useState({});
   const [noticia3, setNoticia3] = useState({});
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL+'/noticias';
   useEffect(() => {
     consultarApi();
   }, []);

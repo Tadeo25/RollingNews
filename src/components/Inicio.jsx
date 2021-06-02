@@ -27,7 +27,7 @@ const Inicio = () => {
   const [noticia10, setNoticia10] = useState({});
   const [noticia11, setNoticia11] = useState({});
   const [noticia12, setNoticia12] = useState({});
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL+'/noticias';
   useEffect(() => {
     consultarApi();
   }, []);

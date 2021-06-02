@@ -21,7 +21,7 @@ export default function Noticias(props) {
         console.log(codigo);
         //Agregrar solicitud deleted
         try {
-          const URL = process.env.REACT_APP_API_URL + "/" + codigo;
+          const URL = process.env.REACT_APP_API_URL + "/noticias/" + codigo;
           const response = await fetch(URL, {
             method: "DELETE",
             headers: {
