@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
-import SeccionNoticias from './components/SeccionNoticia'
+import SeccionNoticias from './components/Secciones/SeccionNoticia'
 import Suscripcion from "./components/Suscripcion";
 import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
+import DetalleNoticias from './components/DetalleNoticia';
 import Clima from "./components/Clima";
 
 function App() {
@@ -81,6 +82,9 @@ function App() {
          </Route>
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
+         </Route>
+         <Route exact path='/Detalle'>
+           <DetalleNoticias></DetalleNoticias>
          </Route>
       </Switch>
       <Footer></Footer>
