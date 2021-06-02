@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";

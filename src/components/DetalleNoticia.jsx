@@ -1,24 +1,37 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 export default function DetalleNoticias() {
+  const [noticia0, setNoticia0] = useState({});
+  const URL = process.env.REACT_APP_API_URL;
+  useEffect(() => {
+    consultarApi();
+  }, []);
 
+  const consultarApi = async () => {
+    const res = await fetch(URL);
+    const resultado = await res.json();
+    console.log(res);
+    console.log(resultado[0]);
+    setNoticia0(resultado[0]);
+  };
 return (
-  <div>
+  <div className="d-flex justify-content center">
   <Row>
     <Col xs={12} md={10}>
     <div className="m-5 p-2">
-  <h5>Seccion</h5>
-  <h1>Titulo Noticia</h1>
+  <h4>{noticia0.categoria}</h4>
+  <h1>{noticia0.tituloNoticia}</h1>
   <p>
-      lorem loremlorem ipsum dolor sit amet, consectetur lorem, sed diam lorem sed lorem
+      <b>{noticia0.descripcionNoticia}</b>
   </p>
   <img 
-  src="https://www.viewsonic.com/skin/frontend/smartwave/viewsonic/images/category-pages/projector-home/4k_projectors/Ultra_HD.jpg" 
-  alt="" className="img-fluid" 
+  src={noticia0.imagen}
+  alt="" className="img-fluid imgdetalle" 
   />
-   <p>
-      lorem loremlorem ipsum dolor sit amet, consectetur lorem, sed diam lorem sed lorem
+   <p className="my-3">
+      {noticia0.cuerpoNoticia}
   </p>
   </div>
   </Col>

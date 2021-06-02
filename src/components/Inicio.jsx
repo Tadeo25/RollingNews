@@ -1,14 +1,9 @@
 import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import destacado1 from "./img/vacunas_principal.jpg";
-import destacado2 from "./img/estacionDeServicio_principal.jpg";
 import banner1 from "./img/coronavirus.jpg";
 import banner2 from "./img/coronavirus2.gif";
 import banner3 from "./img/coronavirus3.gif";
-import espectaculoscine from "./img/espectaculos_cine.jpg";
-import espectaculostv from "./img/espectaculos_tv.jpg";
-import espectaculosmusica from "./img/espectaculos_musica.jpg";
-import espectaculosteatro from "./img/espectaculos_teatro.jpg";
+import { Link } from "react-router-dom";
 import publicidad1 from "./img/publicidad1.gif";
 import publicidad2 from "./img/publicidad2.gif";
 import "../App.css";
@@ -78,12 +73,13 @@ const Inicio = () => {
               src={noticia0.imagen}
               alt="Imagen noticia principal"
             />
-
+<Link to={`/Detalle`} className="text-decoration-none">
             <Card.Body className="shadow bgcard colortext rounded border">
               <Card.Title className="font-weight-bold fuentetitulos">
                 <h4>{noticia0.tituloNoticia}</h4>{" "}
               </Card.Title>
             </Card.Body>
+            </Link>
           </Col>
           <Col xs={12} md={4}>
             <img
