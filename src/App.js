@@ -6,11 +6,19 @@ import Navegacion from "./components/common/Navegacion";
 import Login from './components/Login';
 import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
-import SeccionNoticias from './components/SeccionNoticia'
+import SeccionActualidad from './components/Secciones/SeccionActualidad';
+import SeccionEspectaculos from './components/Secciones/SeccionEspectaculos';
+import SeccionTecnologia from './components/Secciones/SeccionTecnologia';
+import SeccionDeportes from './components/Secciones/SeccionDeportes';
+import SeccionEconomia from './components/Secciones/SeccionEconomia';
+import SeccionPolitica from './components/Secciones/SeccionPolitica';
+import SeccionSalud from './components/Secciones/SeccionSalud';
+import SeccionFotografia from './components/Secciones/SeccionFotografia';
 import Suscripcion from "./components/Suscripcion";
 import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
+import DetalleNoticias from './components/DetalleNoticia';
 import Clima from "./components/Clima";
 import Error404 from "./components/Error404";
 import {isAdmin} from "./components/common/helpers";
@@ -23,8 +31,6 @@ function App() {
 
   const URL = process.env.REACT_APP_API_URL
   const [noticias, setNoticias] = useState([]);
-  console.log(isAdmin());
-  
   useEffect(() => {
     consultarClima();
   }, []);
@@ -39,19 +45,19 @@ function App() {
     setHumedad(resultado.main.humidity);
     setIcono(resultado.weather[0].icon);
   };
-  
 
-  useEffect(() =>{
+
+  useEffect(() => {
     consultarAPI();
   }, []);
 
-  const consultarAPI = async () =>{
+  const consultarAPI = async () => {
     try {
       const res = await fetch(URL);
       if (res.status === 200) {
-      const datos = await res.json();
-      console.log(datos);
-      setNoticias(datos);
+        const datos = await res.json();
+        console.log(datos);
+        setNoticias(datos);
       }
     } catch (error) {
       console.log(error);
@@ -76,8 +82,29 @@ function App() {
           ? <Redirect to='/lista'/>
           : <Login></Login>}
         </Route>
-        <Route exact path="/Seccion">
-          <SeccionNoticias></SeccionNoticias>
+        <Route exact path="/actualidad">
+          <SeccionActualidad></SeccionActualidad>
+        </Route>
+        <Route exact path="/espectaculos">
+          <SeccionEspectaculos></SeccionEspectaculos>
+        </Route>        
+        <Route exact path="/tecnologia">
+          <SeccionTecnologia></SeccionTecnologia>
+        </Route>       
+        <Route exact path="/deportes">
+          <SeccionDeportes></SeccionDeportes>
+        </Route>        
+         <Route exact path="/economia">
+          <SeccionEconomia></SeccionEconomia>
+        </Route>        
+        <Route exact path="/politica">
+          <SeccionPolitica></SeccionPolitica>
+        </Route>        
+        <Route exact path="/salud">
+          <SeccionSalud></SeccionSalud>
+        </Route>       
+         <Route exact path="/fotografia">
+          <SeccionFotografia></SeccionFotografia>
         </Route>
         <Route exact path="/suscripcion">
           <Suscripcion></Suscripcion>
@@ -97,10 +124,13 @@ function App() {
          <Route path="*">
           <Error404></Error404>
         </Route>
+        <Route exact path="/Detalle">
+          <DetalleNoticias></DetalleNoticias>
+        </Route>
       </Switch>
       <Footer></Footer>
     </Router>
   );
-  }
+}
 
 export default App;
