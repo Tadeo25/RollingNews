@@ -3,7 +3,9 @@ import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import Logo4 from "../img/Logo4.gif";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleDown, faArrowAltCircleUp, faUser, faUserShield } from "@fortawesome/free-solid-svg-icons";
+import {isAdmin,Logout} from './helpers';
+
 
 const Navegacion = () => {
   return (
@@ -46,12 +48,21 @@ const Navegacion = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavLink exact={true} to="login" className="nav-link">
-              Login
-            </NavLink>
+            { isAdmin() 
+            ? (<NavLink exact={true} to="#" className="nav-link" onClick={() => Logout()}>
+            Logout <FontAwesomeIcon icon={faArrowAltCircleDown} />
+          </NavLink>)
+            : (<NavLink exact={true} to="login" className="nav-link">
+            Login <FontAwesomeIcon icon={faArrowAltCircleUp} />
+          </NavLink>)}
             <NavLink exact={true} to="suscripcion" className="nav-link">
               Suscripción <FontAwesomeIcon icon={faUser} />
             </NavLink>
+            
+            { isAdmin() &&
+              <NavLink exact={true} to="/lista" className="nav-link">
+                Admin <FontAwesomeIcon icon={faUserShield} />
+              </NavLink>}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

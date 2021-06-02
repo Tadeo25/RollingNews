@@ -96,14 +96,13 @@ body {
     background-image: linear-gradient(0deg, #e6e6e6 0%, #fafafa 100%);
 }
 
-/* html {
-    height: 100%;
-} */
-
-
+html {
+    min-height: 100%;
+}
 
 
 /*Footer */
+
 .footer {
     background-color: #163860;
 }
