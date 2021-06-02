@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -33,16 +34,16 @@ export default function SeccionNoticias() {
     <>
       <div className="container d-flex justify-content-around">
       <div className="d-flex flex-column">
-          <Card style={{ width: "18rem" }} className="m-3">
-            <Card.Img variant="top" src={noticia0.imagen} />
-            <Card.Body>
+          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
+            <Card.Img variant="top" src={noticia0.imagen} className="rounded border-bottom imgcards" />
+            <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia0.tituloNoticia}</Card.Title>
               <Card.Text>{noticia0.descripcionNoticia}</Card.Text>
             </Card.Body>
           </Card>
-          <Card style={{ width: "18rem" }} className="m-3">
-            <Card.Img variant="top" src={noticia1.imagen} />
-            <Card.Body>
+          <Card style={{ width: "18rem" }} className="m-3 rounded border stylecards">
+            <Card.Img variant="top" src={noticia1.imagen} className="rounded border-bottom imgcards"/>
+            <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia1.tituloNoticia}</Card.Title>
               <Card.Text>{noticia1.descripcionNoticia}</Card.Text>
             </Card.Body>
@@ -56,16 +57,16 @@ export default function SeccionNoticias() {
         />
 
         <div className="d-flex flex-column">
-          <Card style={{ width: "18rem" }} className="m-3">
-            <Card.Img variant="top" src={noticia2.imagen} />
-            <Card.Body>
+          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
+            <Card.Img variant="top" src={noticia2.imagen} className="rounded border-bottom imgcards" />
+            <Card.Body className="shadow bgcard colortext"> 
               <Card.Title>{noticia2.tituloNoticia}</Card.Title>
               <Card.Text>{noticia2.descripcionNoticia}</Card.Text>
             </Card.Body>
           </Card>
-          <Card style={{ width: "18rem" }} className="m-3">
-            <Card.Img variant="top" src={noticia3.imagen} />
-            <Card.Body>
+          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
+            <Card.Img variant="top" src={noticia3.imagen} className="rounded border-bottom imgcards"/>
+            <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia3.tituloNoticia}</Card.Title>
               <Card.Text>{noticia3.descripcionNoticia}</Card.Text>
             </Card.Body>

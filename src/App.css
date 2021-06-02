@@ -2,6 +2,15 @@
 .bgcard {
     background-color: #f2f2f2;
 }
+.bgcard:hover {
+    box-shadow: 45px 25px 25px black;
+    transform: translate(5px, 5px);
+    transition: 0.5s;
+}
+.imgcardsEspectaculo{
+    width: 186px;
+    height: 330px;
+}
 
 .bgtitulos {
     background-color: #eaeef2;
@@ -44,7 +53,18 @@
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
-
+.stylecards{
+    width: 300px;
+    height: 520px;
+}
+.stylecards:hover {
+    box-shadow: 45px 25px 25px black;
+    transform: translate(5px, 5px);
+    transition: 0.5s;
+}
+.imgcards{
+    height: 250px;
+}
 /* Navbar*/
 
 .navbar {

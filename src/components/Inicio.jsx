@@ -12,8 +12,50 @@ import espectaculosteatro from "./img/espectaculos_teatro.jpg";
 import publicidad1 from "./img/publicidad1.gif";
 import publicidad2 from "./img/publicidad2.gif";
 import "../App.css";
+import { useState, useEffect } from "react";
 
 const Inicio = () => {
+  //Noticias principales
+  const [noticia0, setNoticia0] = useState({});
+  const [noticia1, setNoticia1] = useState({});
+  const [noticia2, setNoticia2] = useState({});
+  const [noticia3, setNoticia3] = useState({});
+  //Noticias de deportes
+  const [noticia4, setNoticia4] = useState({});
+  const [noticia5, setNoticia5] = useState({});
+  //Noticias de tecnología
+  const [noticia6, setNoticia6] = useState({});
+  const [noticia7, setNoticia7] = useState({});
+  const [noticia8, setNoticia8] = useState({});
+  //Noticias de Espectaculos
+  const [noticia9, setNoticia9] = useState({});
+  const [noticia10, setNoticia10] = useState({});
+  const [noticia11, setNoticia11] = useState({});
+  const [noticia12, setNoticia12] = useState({});
+  const URL = process.env.REACT_APP_API_URL;
+  useEffect(() => {
+    consultarApi();
+  }, []);
+
+  const consultarApi = async () => {
+    const res = await fetch(URL);
+    const resultado = await res.json();
+    console.log(res);
+    console.log(resultado[0]);
+    setNoticia0(resultado[0]);
+    setNoticia1(resultado[24]);
+    setNoticia2(resultado[11]);
+    setNoticia3(resultado[19]);
+    setNoticia4(resultado[14]);
+    setNoticia5(resultado[13]);
+    setNoticia6(resultado[8]);
+    setNoticia7(resultado[9]);
+    setNoticia8(resultado[10]);
+    setNoticia9(resultado[4]);
+    setNoticia10(resultado[5]);
+    setNoticia11(resultado[6]);
+    setNoticia12(resultado[7]);
+  };
   return (
     <section className="fondo">
       <Container>
@@ -33,13 +75,13 @@ const Inicio = () => {
           <Col xs={12} md={7}>
             <Card.Img
               className="rounded mt-3"
-              src={destacado2}
+              src={noticia0.imagen}
               alt="Imagen noticia principal"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
               <Card.Title className="font-weight-bold fuentetitulos">
-                <h4>Titulo Noticia 1</h4>{" "}
+                <h4>{noticia0.tituloNoticia}</h4>{" "}
               </Card.Title>
             </Card.Body>
           </Col>
@@ -54,14 +96,13 @@ const Inicio = () => {
           <Col xs={12} md={4}>
             <Card.Img
               className="rounded border-bottom mt-4"
-              src={destacado1}
+              src={noticia1.imagen}
               alt="imagen sección principal noticia 2"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {noticia1.tituloNoticia}
               </Card.Text>
             </Card.Body>
           </Col>
@@ -69,14 +110,13 @@ const Inicio = () => {
           <Col xs={12} md={4}>
             <Card.Img
               className="rounded border-bottom mt-4"
-              src={destacado1}
+              src={noticia2.imagen}
               alt="imagen sección principal noticia 3"
             />
 
             <Card.Body className="shadow bgcard colortext rounded border">
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {noticia2.tituloNoticia}
               </Card.Text>
             </Card.Body>
           </Col>
@@ -84,14 +124,12 @@ const Inicio = () => {
           <Col xs={12} md={4}>
             <Card.Img
               className="rounded border-bottom mt-4"
-              src={destacado1}
+              src={noticia3.imagen}
               alt="imagen sección principal noticia 4"
             />
-
             <Card.Body className="shadow bgcard colortext rounded border">
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {noticia3.tituloNoticia}
               </Card.Text>
             </Card.Body>
           </Col>
@@ -103,15 +141,11 @@ const Inicio = () => {
           <Col xs={12} md={6}>
             <Row className="no-gutters">
               <Col md={6} lg={6}>
-                <Card.Img variant="top" src={destacado2} />
+                <Card.Img variant="top" src={noticia4.imagen} />
               </Col>
               <Col>
                 <Card.Body className="bgcard">
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Title>{noticia4.tituloNoticia}</Card.Title>
                 </Card.Body>
               </Col>
             </Row>
@@ -120,15 +154,11 @@ const Inicio = () => {
           <Col xs={12} md={6}>
             <Row className="no-gutters">
               <Col md={6} lg={6}>
-                <Card.Img variant="top" src={destacado2} />
+                <Card.Img variant="top" src={noticia5.imagen} />
               </Col>
               <Col>
                 <Card.Body className="bgcard">
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Title>{noticia5.tituloNoticia}</Card.Title>
                 </Card.Body>
               </Col>
             </Row>
@@ -152,14 +182,13 @@ const Inicio = () => {
           <Col xs={12} md={7}>
             <Card.Img
               className="rounded"
-              src={destacado2}
+              src={noticia6.imagen}
               alt="Imagen principal sección tecnología"
             />
 
             <Card.Body className="shadow bgcard rounded border">
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {noticia6.tituloNoticia}
               </Card.Text>
             </Card.Body>
           </Col>
@@ -168,14 +197,13 @@ const Inicio = () => {
               <Col xs={12} md={10} lg={8}>
                 <Card.Img
                   className="rounded altura"
-                  src={destacado2}
+                  src={noticia7.imagen}
                   alt="Imagen 2 sección tecnología"
                 />
 
                 <Card.Body className="shadow bgcard rounded border">
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {noticia7.tituloNoticia}
                   </Card.Text>
                 </Card.Body>
               </Col>
@@ -183,14 +211,13 @@ const Inicio = () => {
               <Col xs={12} md={10} lg={8} className="my-2">
                 <Card.Img
                   className="rounded altura"
-                  src={destacado2}
+                  src={noticia8.imagen}
                   alt="Imagen 3 sección tecnología"
                 />
 
                 <Card.Body className="shadow bgcard rounded border">
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {noticia8.tituloNoticia}
                   </Card.Text>
                 </Card.Body>
               </Col>
@@ -204,37 +231,37 @@ const Inicio = () => {
         <Row>
           <Col xs={12} md={6}>
             <Card className="bg-dark text-white">
-              <Card.Img src={espectaculoscine} alt="imagen sección cine" />
+              <Card.Img src={noticia12.imagen} alt="imagen sección cine" className="imgcardsEspectaculo" />
               <Card.ImgOverlay>
                 <Card.Title className="fuentetitulos textocards">
-                  CINE
+                  {noticia12.tituloNoticia}
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>
 
             <Card className="bg-dark text-white my-3">
-              <Card.Img src={espectaculosteatro} alt="imagen sección teatro" />
+              <Card.Img src={noticia10.imagen} alt="imagen sección teatro" className="imgcardsEspectaculo"/>
               <Card.ImgOverlay>
                 <Card.Title className="fuentetitulos textocards">
-                  TEATRO
+                  {noticia10.tituloNoticia}
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>
           </Col>
           <Col xs={12} md={6}>
             <Card className="bg-dark text-white">
-              <Card.Img src={espectaculosmusica} alt="imagen sección música" />
+              <Card.Img src={noticia9.imagen} alt="imagen sección música" className="imgcardsEspectaculo"/>
               <Card.ImgOverlay>
                 <Card.Title className="fuentetitulos textocards">
-                  MUSICA
+                  {noticia9.tituloNoticia}
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>
 
             <Card className="bg-dark text-white my-3">
-              <Card.Img src={espectaculostv} alt="imagen sección tv" />
+              <Card.Img src={noticia11.imagen} alt="imagen sección tv" className="imgcardsEspectaculo"/>
               <Card.ImgOverlay>
-                <Card.Title className="fuentetitulos textocards">TV</Card.Title>
+                <Card.Title className="fuentetitulos textocards">{noticia11.tituloNoticia}</Card.Title>
               </Card.ImgOverlay>
             </Card>
           </Col>
