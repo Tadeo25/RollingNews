@@ -6,7 +6,7 @@ import Navegacion from "./components/common/Navegacion";
 import Login from './components/Login';
 import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
-import SeccionNoticias from './components/Secciones/SeccionNoticia'
+import SeccionActualidad from './components/Secciones/SeccionActualidad'
 import Suscripcion from "./components/Suscripcion";
 import AgregarNoticia from './components/AgregarNoticia';
 import ListaNoticias from './components/ListaNoticias';
@@ -73,8 +73,8 @@ function App() {
         <Route exact path='/login'>
         <Login></Login>
         </Route>
-        <Route exact path="/Seccion">
-          <SeccionNoticias></SeccionNoticias>
+        <Route exact path="/actualidad">
+          <SeccionActualidad></SeccionActualidad>
         </Route>
         <Route exact path="/suscripcion">
           <Suscripcion></Suscripcion>

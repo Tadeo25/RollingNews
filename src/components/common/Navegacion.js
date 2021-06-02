@@ -18,29 +18,29 @@ const Navegacion = () => {
             <NavLink exact={true} to="/" className="nav-link">
               Inicio
             </NavLink>
-            <NavLink exact={true} to="/Seccion" className="nav-link">
+            <NavLink exact={true} to="/actualidad" className="nav-link">
               Actualidad
             </NavLink>
-            <NavLink exact={true} to="espectaculos" className="nav-link">
+            <NavLink exact={true} to="/espectaculos" className="nav-link">
               Espectaculos
             </NavLink>
-            <NavLink exact={true} to="tecnologia" className="nav-link">
+            <NavLink exact={true} to="/tecnologia" className="nav-link">
               Tecnologia
             </NavLink>
-            <NavLink exact={true} to="deportes" className="nav-link">
+            <NavLink exact={true} to="/deportes" className="nav-link">
               Deportes
             </NavLink>
             <NavDropdown title="Mas Noticias" id="basic-nav-dropdown">
-              <NavLink exact={true} to="economia" className="dropdown-item">
+              <NavLink exact={true} to="/economia" className="dropdown-item">
                 Economía
               </NavLink>
-              <NavLink exact={true} to="politica" className="dropdown-item">
+              <NavLink exact={true} to="/politica" className="dropdown-item">
                 Política
               </NavLink>
-              <NavLink exact={true} to="salud" className="dropdown-item">
+              <NavLink exact={true} to="/salud" className="dropdown-item">
                 Salud
               </NavLink>
-              <NavLink exact={true} to="fotografia" className="dropdown-item">
+              <NavLink exact={true} to="/fotografia" className="dropdown-item">
                 Fotografía
               </NavLink>
             </NavDropdown>
