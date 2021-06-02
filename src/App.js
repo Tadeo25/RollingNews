@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
+import Login from './components/Login';
 import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
 import SeccionNoticias from './components/Secciones/SeccionNoticia'
@@ -12,6 +13,7 @@ import ListaNoticias from './components/ListaNoticias';
 import EditarNoticia from './components/EditarNoticia';
 import DetalleNoticias from './components/DetalleNoticia';
 import Clima from "./components/Clima";
+import Error404 from "./components/Error404";
 
 function App() {
   const [temperatura, setTemperatura] = useState(0);
@@ -68,6 +70,9 @@ function App() {
           ></Clima>
           <Inicio></Inicio>
         </Route>
+        <Route exact path='/login'>
+        <Login></Login>
+        </Route>
         <Route exact path="/Seccion">
           <SeccionNoticias></SeccionNoticias>
         </Route>
@@ -83,9 +88,12 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
-         <Route exact path='/Detalle'>
-           <DetalleNoticias></DetalleNoticias>
-         </Route>
+         <Route exact path="/error404">
+          <Error404></Error404>
+        </Route>
+        <Route exact path="/Detalle">
+          <DetalleNoticias></DetalleNoticias>
+        </Route>
       </Switch>
       <Footer></Footer>
     </Router>
