@@ -124,16 +124,16 @@ function App() {
          <Route exact path='/editarnoticia/:_id'>
            <EditarNoticia consultarAPI={consultarAPI}></EditarNoticia>
          </Route>
-        <Route exact path="/Detalle">
+        <Route exact path="/noticias/Detalle">
           <DetalleNoticias></DetalleNoticias>
         </Route>
-        <Route exact path="/Detalle/Deportes">
+        <Route exact path="/noticias/Detalle/Deportes">
           <DetalleDeportes></DetalleDeportes>
         </Route>
-        <Route exact path="/Detalle/Tecnologia">
+        <Route exact path="/noticias/Detalle/Tecnologia">
           <DetalleTecnologia></DetalleTecnologia>
         </Route>
-        <Route exact path="/Detalle/Espectaculo">
+        <Route exact path="/noticias/Detalle/Espectaculo">
           <DetalleEspectaculo></DetalleEspectaculo>
         </Route>
          <Route path="*">

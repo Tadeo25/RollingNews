@@ -73,7 +73,7 @@ const Inicio = () => {
               src={noticia0.imagen}
               alt="Imagen noticia principal"
             />
-            <Link to={`/Detalle`} className="text-decoration-none textcolor">
+            <Link to={`/noticias/Detalle`} className="text-decoration-none textcolor">
               <Card.Body className="shadow bgcard colortext rounded border">
                 <Card.Title className="font-weight-bold fuentetitulos">
                   <h4>{noticia0.tituloNoticia}</h4>{" "}
@@ -134,7 +134,7 @@ const Inicio = () => {
                 <Card.Img variant="top" src={noticia4.imagen} />
               </Col>
               <Col>
-                <Link to={`/Detalle/Deportes`} className="text-decoration-none">
+                <Link to={`/noticias/Detalle/Deportes`} className="text-decoration-none">
                   <Card.Body className="bgcard">
                     <Card.Title>{noticia4.tituloNoticia}</Card.Title>
                   </Card.Body>
@@ -179,7 +179,7 @@ const Inicio = () => {
               src={noticia6.imagen}
               alt="Imagen principal sección tecnología"
             />
-            <Link to={`/Detalle/Tecnologia`} className="text-decoration-none">
+            <Link to={`/noticias/Detalle/Tecnologia`} className="text-decoration-none">
               <Card.Body className="shadow bgcard rounded border">
                 <Card.Text>{noticia6.tituloNoticia}</Card.Text>
               </Card.Body>
@@ -248,7 +248,7 @@ const Inicio = () => {
             </Card>
           </Col>
           <Col xs={12} md={6}>
-            <Link to={`/Detalle/Espectaculo`} className="text-decoration-none">
+            <Link to={`/noticias/Detalle/Espectaculo`} className="text-decoration-none">
               <Card className="bg-dark text-white">
                 <Card.Img
                   src={noticia9.imagen}

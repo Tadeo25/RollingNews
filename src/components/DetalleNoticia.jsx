@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function DetalleNoticias() {
   const [noticia0, setNoticia0] = useState({});
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL+'/noticias';
   useEffect(() => {
     consultarApi();
   }, []);
