@@ -7,6 +7,7 @@ const Login = (props) => {
   const [mail, setMail] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [error, setError] = useState(false);
+  const  URL = process.env.REACT_APP_API_URL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const Login = (props) => {
           },
           body: JSON.stringify(login),
         };
-        const response = await fetch('http://localhost:4000/api/login', cabecera);
+        const response = await fetch(`${URL}/login`, cabecera);
         console.log(response);
         console.log(response.body);
         if (response.ok) {

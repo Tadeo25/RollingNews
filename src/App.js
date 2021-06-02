@@ -32,7 +32,7 @@ function App() {
   const [humedad, setHumedad] = useState(0);
   const [icono, setIcono] = useState("");
 
-  const URL = process.env.REACT_APP_API_URL
+  const URL = process.env.REACT_APP_API_URL+'/noticias';
   const [noticias, setNoticias] = useState([]);
   useEffect(() => {
     consultarClima();
