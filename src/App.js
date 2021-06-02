@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
+import Login from './components/Login';
 import Footer from "./components/common/Footer";
 import Inicio from "./components/Inicio";
 import SeccionNoticias from './components/SeccionNoticia'
@@ -67,6 +68,9 @@ function App() {
             icono={icono}
           ></Clima>
           <Inicio></Inicio>
+        </Route>
+        <Route exact path='/login'>
+        <Login></Login>
         </Route>
         <Route exact path="/Seccion">
           <SeccionNoticias></SeccionNoticias>
