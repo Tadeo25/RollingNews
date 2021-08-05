@@ -6,7 +6,8 @@ import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
-import publicidad2 from "../img/publicidad3.gif";
+import publicidad1 from "../img/publicidad3.gif";
+import publicidad2 from "../img/publicidad4.gif";
 import { useState, useEffect } from "react";
 
 export default function SeccionNoticias() {
@@ -66,11 +67,18 @@ export default function SeccionNoticias() {
           </Card>
         </div>
 
-        <img
-          className="tex-center my-3 d-none d-lg-block w-25"
-          src={publicidad2}
-          alt="gif publicidad google"
-        />
+        <div className="d-flex flex-column text-center">
+          <img
+            className="text-center my-3 d-none d-lg-block w-100 h-100"
+            src={publicidad1}
+            alt="gif publicidad google"
+          />
+          <img
+            className="text-center my-3 d-none d-lg-block w-100 h-100"
+            src={publicidad2}
+            alt="gif publicidad google"
+          />
+        </div>
 
         <div className="d-flex flex-column">
           <Link to={`/Detalle/Deportes`} className="text-decoration-none">

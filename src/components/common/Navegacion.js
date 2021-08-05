@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
-import Logo4 from "../img/Logo4.gif";
+import Logo from "../img/Logo.png";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleDown, faArrowAltCircleUp, faUser, faUserShield } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,7 @@ const Navegacion = () => {
     <div>
       <Navbar expand="lg" variant="dark">
         <Navbar.Brand href="/">
-          <Image src={Logo4} fluid />
+          <Image src={Logo} fluid />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

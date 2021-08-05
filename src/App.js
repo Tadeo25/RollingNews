@@ -78,7 +78,7 @@ function App() {
             humedad={humedad}
             icono={icono}
           ></Clima>
-          <Inicio></Inicio>
+          <Inicio noticias={noticias} consultarAPI={consultarAPI}></Inicio>
         </Route>
         <Route exact path='/login'>
         { isAdmin() 

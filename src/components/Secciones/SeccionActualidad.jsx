@@ -6,7 +6,8 @@ import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
-import publicidad2 from "../img/publicidad3.gif";
+import publicidad1 from "../img/publicidad3.gif";
+import publicidad2 from "../img/publicidad4.gif";
 import { useState, useEffect } from "react";
 
 export default function SeccionNoticias() {
@@ -18,7 +19,7 @@ export default function SeccionNoticias() {
   const [noticia5, setNoticia5] = useState({});
   const [noticia6, setNoticia6] = useState({});
   const [noticia7, setNoticia7] = useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
+  const URL = process.env.REACT_APP_API_URL + "/noticias";
   useEffect(() => {
     consultarApi();
   }, []);
@@ -41,42 +42,74 @@ export default function SeccionNoticias() {
   return (
     <>
       <div className="container d-flex justify-content-around">
-      <div className="d-flex flex-column">
-        <Link to={`/Detalle`} className="text-decoration-none">
-          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
-            <Card.Img variant="top" src={noticia0.imagen} className="rounded border-bottom imgcards" />
-            <Card.Body className="shadow bgcard colortext">
-              <Card.Title>{noticia0.tituloNoticia}</Card.Title>
-              <Card.Text>{noticia0.descripcionNoticia}</Card.Text>
-            </Card.Body>
-          </Card>
-        
-        </Link>
-          <Card style={{ width: "18rem" }} className="m-3 rounded border stylecards">
-            <Card.Img variant="top" src={noticia1.imagen} className="rounded border-bottom imgcards"/>
+        <div className="d-flex flex-column">
+          <Link to={`/Detalle`} className="text-decoration-none">
+            <Card
+              style={{ width: "18rem" }}
+              className="m-3  rounded border stylecards"
+            >
+              <Card.Img
+                variant="top"
+                src={noticia0.imagen}
+                className="rounded border-bottom imgcards"
+              />
+              <Card.Body className="shadow bgcard colortext">
+                <Card.Title>{noticia0.tituloNoticia}</Card.Title>
+                <Card.Text>{noticia0.descripcionNoticia}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+          <Card
+            style={{ width: "18rem" }}
+            className="m-3 rounded border stylecards"
+          >
+            <Card.Img
+              variant="top"
+              src={noticia1.imagen}
+              className="rounded border-bottom imgcards"
+            />
             <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia1.tituloNoticia}</Card.Title>
               <Card.Text>{noticia1.descripcionNoticia}</Card.Text>
             </Card.Body>
           </Card>
         </div>
-
-        <img
-          className="tex-center my-3 d-none d-lg-block w-25"
-          src={publicidad2}
-          alt="gif publicidad google"
-        />
-
+        <div className="d-flex flex-column text-center">
+          <img
+            className="text-center my-3 d-none d-lg-block w-100 h-100"
+            src={publicidad1}
+            alt="gif publicidad google"
+          />
+          <img
+            className="text-center my-3 d-none d-lg-block w-100 h-100"
+            src={publicidad2}
+            alt="gif publicidad google"
+          />
+        </div>
         <div className="d-flex flex-column">
-          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
-            <Card.Img variant="top" src={noticia2.imagen} className="rounded border-bottom imgcards" />
-            <Card.Body className="shadow bgcard colortext"> 
+          <Card
+            style={{ width: "18rem" }}
+            className="m-3  rounded border stylecards"
+          >
+            <Card.Img
+              variant="top"
+              src={noticia2.imagen}
+              className="rounded border-bottom imgcards"
+            />
+            <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia2.tituloNoticia}</Card.Title>
               <Card.Text>{noticia2.descripcionNoticia}</Card.Text>
             </Card.Body>
           </Card>
-          <Card style={{ width: "18rem" }} className="m-3  rounded border stylecards">
-            <Card.Img variant="top" src={noticia3.imagen} className="rounded border-bottom imgcards"/>
+          <Card
+            style={{ width: "18rem" }}
+            className="m-3  rounded border stylecards"
+          >
+            <Card.Img
+              variant="top"
+              src={noticia3.imagen}
+              className="rounded border-bottom imgcards"
+            />
             <Card.Body className="shadow bgcard colortext">
               <Card.Title>{noticia3.tituloNoticia}</Card.Title>
               <Card.Text>{noticia3.descripcionNoticia}</Card.Text>
@@ -101,10 +134,7 @@ export default function SeccionNoticias() {
         >
           <SwiperSlide>
             <Card style={{ width: "18rem" }} className="m-3 styleswipper">
-              <Card.Img
-                variant="top"
-                src={noticia4.imagen}
-              />
+              <Card.Img variant="top" src={noticia4.imagen} />
               <Card.Body>
                 <Card.Title>{noticia4.tituloNoticia}</Card.Title>
               </Card.Body>
@@ -112,10 +142,7 @@ export default function SeccionNoticias() {
           </SwiperSlide>
           <SwiperSlide>
             <Card style={{ width: "18rem" }} className="m-3 styleswipper">
-              <Card.Img
-                variant="top"
-                src={noticia5.imagen}
-              />
+              <Card.Img variant="top" src={noticia5.imagen} />
               <Card.Body>
                 <Card.Title>{noticia5.tituloNoticia}</Card.Title>
               </Card.Body>
@@ -123,10 +150,7 @@ export default function SeccionNoticias() {
           </SwiperSlide>
           <SwiperSlide>
             <Card style={{ width: "18rem" }} className="m-3 styleswipper">
-              <Card.Img
-                variant="top"
-                src={noticia6.imagen}
-              />
+              <Card.Img variant="top" src={noticia6.imagen} />
               <Card.Body>
                 <Card.Title>{noticia6.tituloNoticia}</Card.Title>
               </Card.Body>
@@ -134,10 +158,7 @@ export default function SeccionNoticias() {
           </SwiperSlide>
           <SwiperSlide>
             <Card style={{ width: "18rem" }} className="m-3 styleswipper">
-              <Card.Img
-                variant="top"
-                src={noticia7.imagen}
-              />
+              <Card.Img variant="top" src={noticia7.imagen} />
               <Card.Body>
                 <Card.Title>{noticia7.tituloNoticia}</Card.Title>
               </Card.Body>
