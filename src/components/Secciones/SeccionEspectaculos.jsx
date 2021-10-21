@@ -17,27 +17,29 @@ export default function SeccionNoticias() {
   const [noticia4, setNoticia4] = useState({});
   const [noticia5, setNoticia5] = useState({});
   const [noticia6, setNoticia6] = useState({});
-  const [noticia7, setNoticia7] = useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
+  //const [noticia7, setNoticia7] = useState({});
+  
   useEffect(() => {
+    const URL = process.env.REACT_APP_API_URL+'/noticias';
+    const consultarApi = async () => {
+      const res = await fetch(URL);
+      const resultado = await res.json();
+      console.log(res);
+      console.log(resultado[4]);
+      setNoticia0(resultado[4]);
+      setNoticia1(resultado[5]);
+      setNoticia2(resultado[6]);
+      setNoticia3(resultado[7]);
+      setNoticia4(resultado[60]);
+      setNoticia5(resultado[61]);
+      setNoticia6(resultado[62]);
+      //setNoticia7(resultado[63]);
+    };
+  
     consultarApi();
   }, []);
 
-  const consultarApi = async () => {
-    const res = await fetch(URL);
-    const resultado = await res.json();
-    console.log(res);
-    console.log(resultado[4]);
-    setNoticia0(resultado[4]);
-    setNoticia1(resultado[5]);
-    setNoticia2(resultado[6]);
-    setNoticia3(resultado[7]);
-    setNoticia4(resultado[60]);
-    setNoticia5(resultado[61]);
-    setNoticia6(resultado[62]);
-    setNoticia7(resultado[63]);
-  };
-
+  
   return (
     <>
       <div className="container d-flex justify-content-around">
@@ -131,17 +133,7 @@ export default function SeccionNoticias() {
               </Card.Body>
             </Card>
           </SwiperSlide>
-          <SwiperSlide>
-            <Card style={{ width: "18rem" }} className="m-3 styleswipper">
-              <Card.Img
-                variant="top"
-                src={noticia7.imagen}
-              />
-              <Card.Body>
-                <Card.Title>{noticia7.tituloNoticia}</Card.Title>
-              </Card.Body>
-            </Card>
-          </SwiperSlide>
+          
         </Swiper>
       </div>
     </>

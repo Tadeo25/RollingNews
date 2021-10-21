@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navegacion from "./components/common/Navegacion";
 import Login from './components/Login';
@@ -31,31 +31,30 @@ function App() {
   const [termica, setTermica] = useState(0);
   const [humedad, setHumedad] = useState(0);
   const [icono, setIcono] = useState("");
-
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
   const [noticias, setNoticias] = useState([]);
+
   useEffect(() => {
+    const consultarClima = async () => {
+      const respuesta = await fetch(
+        "https://api.openweathermap.org/data/2.5/weather?id=3836873&lang=es&units=metric&appid=ca68d2c3ae10488558ec62298f38d45b"
+      );
+      const resultado = await respuesta.json();
+      if (resultado){
+        setTemperatura(resultado.main.temp);
+        setTermica(resultado.main.feels_like);
+        setHumedad(resultado.main.humidity);
+        setIcono(resultado.weather[0].icon);
+      }
+      
+    };
     consultarClima();
   }, []);
 
-  const consultarClima = async () => {
-    const respuesta = await fetch(
-      "http://api.openweathermap.org/data/2.5/weather?id=3836873&lang=es&units=metric&appid=ca68d2c3ae10488558ec62298f38d45b"
-    );
-    const resultado = await respuesta.json();
-    setTemperatura(resultado.main.temp);
-    setTermica(resultado.main.feels_like);
-    setHumedad(resultado.main.humidity);
-    setIcono(resultado.weather[0].icon);
-  };
 
 
-  useEffect(() => {
-    consultarAPI();
-  }, []);
-
-  const consultarAPI = async () => {
+  const consultarAPI = useCallback( async () => {
     try {
+      const URL = process.env.REACT_APP_API_URL+'/noticias';
       const res = await fetch(URL);
       if (res.status === 200) {
         const datos = await res.json();
@@ -65,7 +64,12 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  }
+  
+  }, [])
+
+  useEffect(() => {
+    consultarAPI();
+  }, [consultarAPI]);
 
   return (
     <Router>
@@ -116,9 +120,8 @@ function App() {
            <AgregarNoticia consultarAPI={consultarAPI}></AgregarNoticia>
          </Route>
           <Route exact path='/lista'>
-           { isAdmin() 
-              ? <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>
-              : <Redirect to='/login'/>}
+           { isAdmin() && <ListaNoticias noticias={noticias} consultarAPI={consultarAPI}></ListaNoticias>}
+            {!isAdmin() &&  <Redirect to='/login'/>}
           </Route> 
      
          <Route exact path='/editarnoticia/:_id'>
