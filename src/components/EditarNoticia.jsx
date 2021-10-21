@@ -6,32 +6,34 @@ import {campoRequerido} from './common/helpers'
 
 const EditarNoticia = (props) => {
   const[noticia,setNoticia]=useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
-  const {_id} = useParams();
   const tituloNoticiaRef=useRef("");
   const descripcionNoticiaRef=useRef("");
   const cuerpoNoticiaRef=useRef("");
   const imagenRef=useRef("");
   const[categoria,setCategoria] = useState("");
   const [error,setError]= useState(false);
+  const {_id} = useParams();
+ 
 
   useEffect(()=>{
+    const consultarNoticia = async()=>{
+      try{
+        const URL = process.env.REACT_APP_API_URL+'/noticias';
+        const respuesta = await fetch(URL+'/'+_id)
+        console.log(respuesta);
+        if(respuesta.status=== 200){
+          const noticiaEncontrada = await respuesta.json();
+          setNoticia(noticiaEncontrada)
+        }
+      }catch(error){
+        console.log(error)
+        //mostrar un cartel al usuario
+      }
+    }
     consultarNoticia();
 
   },[]);
-  const consultarNoticia = async()=>{
-    try{
-      const respuesta = await fetch(URL+'/'+_id)
-      console.log(respuesta);
-      if(respuesta.status=== 200){
-        const noticiaEncontrada = await respuesta.json();
-        setNoticia(noticiaEncontrada)
-      }
-    }catch(error){
-      console.log(error)
-      //mostrar un cartel al usuario
-    }
-  }
+  
 
 
   const leerCategoria = (e) => {

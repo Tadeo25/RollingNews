@@ -19,26 +19,28 @@ export default function SeccionNoticias() {
   const [noticia5, setNoticia5] = useState({});
   const [noticia6, setNoticia6] = useState({});
   const [noticia7, setNoticia7] = useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
+  
   useEffect(() => {
+    const URL = process.env.REACT_APP_API_URL+'/noticias';
+    const consultarApi = async () => {
+      const res = await fetch(URL);
+      const resultado = await res.json();
+      console.log(res);
+      console.log(resultado[12]);
+      setNoticia0(resultado[12]);
+      setNoticia1(resultado[13]);
+      setNoticia2(resultado[14]);
+      setNoticia3(resultado[15]);
+      setNoticia4(resultado[36]);
+      setNoticia5(resultado[37]);
+      setNoticia6(resultado[38]);
+      setNoticia7(resultado[39]);
+    };
+  
     consultarApi();
   }, []);
 
-  const consultarApi = async () => {
-    const res = await fetch(URL);
-    const resultado = await res.json();
-    console.log(res);
-    console.log(resultado[12]);
-    setNoticia0(resultado[12]);
-    setNoticia1(resultado[13]);
-    setNoticia2(resultado[14]);
-    setNoticia3(resultado[15]);
-    setNoticia4(resultado[36]);
-    setNoticia5(resultado[37]);
-    setNoticia6(resultado[38]);
-    setNoticia7(resultado[39]);
-  };
-
+  
   return (
     <>
       <div className="container d-flex justify-content-around">

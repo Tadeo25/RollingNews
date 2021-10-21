@@ -4,18 +4,21 @@ import { useState, useEffect } from "react";
 
 export default function DetalleNoticias() {
   const [noticia0, setNoticia0] = useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
+  
   useEffect(() => {
+    const URL = process.env.REACT_APP_API_URL+'/noticias';
+    const consultarApi = async () => {
+      const res = await fetch(URL);
+      const resultado = await res.json();
+      console.log(res);
+      console.log('res8',resultado[8]);
+      console.log('res4',resultado[4]);
+      setNoticia0(resultado[8]);
+    };
     consultarApi();
   }, []);
 
-  const consultarApi = async () => {
-    const res = await fetch(URL);
-    const resultado = await res.json();
-    console.log(res);
-    console.log(resultado[8]);
-    setNoticia0(resultado[8]);
-  };
+ 
 return (
   <div className="d-flex justify-content center">
   <Row>

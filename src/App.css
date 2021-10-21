@@ -2,15 +2,18 @@
 .bgcard {
     background-color: #f2f2f2;
 }
+
 .bgcard:hover {
     box-shadow: 45px 25px 25px black;
     transform: translate(5px, 5px);
     transition: 0.5s;
 }
-.imgcardsEspectaculo{
+
+
+/*.imgcardsEspectaculo{
     width: 186px;
     height: 330px;
-}
+}*/
 
 .bgtitulos {
     background-color: #eaeef2;
@@ -44,39 +47,51 @@
 .textocards {
     background: rgba(0, 0, 0, 0.4);
     color: #fff;
-    font-size: 10vw;
+    /*font-size: 10vw;*/
     font-weight: 100;
     text-align: center;
     width: 100%;
     line-height: 1;
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
+
+
 /* Seccion de noticias */
-.stylecards{
+
+.stylecards {
     width: 300px;
     height: 520px;
 }
-.styleswipper{
+
+.styleswipper {
     width: 400px;
     height: 350px;
 }
-.bg-swipper{
+
+.bg-swipper {
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
+
 .stylecards:hover {
     box-shadow: 45px 25px 25px black;
     transform: translate(5px, 5px);
     transition: 0.5s;
 }
-.imgcards{
+
+.imgcards {
     height: 250px;
 }
+
+
 /* Detalle noticia */
-.imgdetalle{
+
+.imgdetalle {
     width: 700px;
     height: 750px;
 }
+
+
 /* Navbar*/
 
 .navbar {
@@ -113,4 +128,3 @@ html {
 .footer {
     background-color: #163860;
 }
-

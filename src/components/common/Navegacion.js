@@ -52,10 +52,10 @@ const Navegacion = () => {
             ? (<NavLink exact={true} to="#" className="nav-link" onClick={() => Logout()}>
             Logout <FontAwesomeIcon icon={faArrowAltCircleDown} />
           </NavLink>)
-            : (<NavLink exact={true} to="login" className="nav-link">
+            : (<NavLink exact={true} to="/login" className="nav-link">
             Login <FontAwesomeIcon icon={faArrowAltCircleUp} />
           </NavLink>)}
-            <NavLink exact={true} to="suscripcion" className="nav-link">
+            <NavLink exact={true} to="/suscripcion" className="nav-link">
               Suscripción <FontAwesomeIcon icon={faUser} />
             </NavLink>
             

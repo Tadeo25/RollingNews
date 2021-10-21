@@ -27,30 +27,32 @@ const Inicio = () => {
   const [noticia10, setNoticia10] = useState({});
   const [noticia11, setNoticia11] = useState({});
   const [noticia12, setNoticia12] = useState({});
-  const URL = process.env.REACT_APP_API_URL+'/noticias';
+  
   useEffect(() => {
+    const URL = process.env.REACT_APP_API_URL+'/noticias';
+    const consultarApi = async () => {
+      const res = await fetch(URL);
+      const resultado = await res.json();
+      console.log(res);
+      console.log(resultado[0]);
+      setNoticia0(resultado[0]);
+      setNoticia1(resultado[24]);
+      setNoticia2(resultado[11]);
+      setNoticia3(resultado[19]);
+      setNoticia4(resultado[14]);
+      setNoticia5(resultado[13]);
+      setNoticia6(resultado[8]);
+      setNoticia7(resultado[9]);
+      setNoticia8(resultado[10]);
+      setNoticia9(resultado[4]);
+      setNoticia10(resultado[5]);
+      setNoticia11(resultado[6]);
+      setNoticia12(resultado[7]);
+    };
     consultarApi();
   }, []);
 
-  const consultarApi = async () => {
-    const res = await fetch(URL);
-    const resultado = await res.json();
-    console.log(res);
-    console.log(resultado[0]);
-    setNoticia0(resultado[0]);
-    setNoticia1(resultado[24]);
-    setNoticia2(resultado[11]);
-    setNoticia3(resultado[19]);
-    setNoticia4(resultado[14]);
-    setNoticia5(resultado[13]);
-    setNoticia6(resultado[8]);
-    setNoticia7(resultado[9]);
-    setNoticia8(resultado[10]);
-    setNoticia9(resultado[4]);
-    setNoticia10(resultado[5]);
-    setNoticia11(resultado[6]);
-    setNoticia12(resultado[7]);
-  };
+  
   return (
     <section className="fondo">
       <Container>
