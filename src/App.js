@@ -75,15 +75,7 @@ function App() {
     <Router>
       <Navegacion></Navegacion>
       <Switch>
-        <Route exact path="/">
-          <Clima
-            temperatura={temperatura}
-            termica={termica}
-            humedad={humedad}
-            icono={icono}
-          ></Clima>
-          <Inicio noticias={noticias} consultarAPI={consultarAPI}></Inicio>
-        </Route>
+        
         <Route exact path='/login'>
         { isAdmin() 
           ? <Redirect to='/lista'/>
@@ -138,6 +130,15 @@ function App() {
         </Route>
         <Route exact path="/noticias/Detalle/Espectaculo">
           <DetalleEspectaculo></DetalleEspectaculo>
+        </Route>
+        <Route path="/">
+          <Clima
+            temperatura={temperatura}
+            termica={termica}
+            humedad={humedad}
+            icono={icono}
+          ></Clima>
+          <Inicio noticias={noticias} consultarAPI={consultarAPI}></Inicio>
         </Route>
          <Route path="*">
           <Error404></Error404>
