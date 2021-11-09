@@ -8,6 +8,7 @@ import "swiper/components/scrollbar/scrollbar.scss";
 import publicidad1 from "../img/publicidad3.gif";
 import publicidad2 from "../img/publicidad4.gif";
 import { useState, useEffect } from "react";
+import "./Seccion.css";
 
 export default function SeccionNoticias() {
   const [noticia0, setNoticia0] = useState({});
@@ -41,7 +42,7 @@ export default function SeccionNoticias() {
   
   return (
     <>
-      <div className="container d-flex justify-content-around">
+      <div className="container d-flex justify-content-around cards">
         <div className="d-flex flex-column">
           <Card style={{ width: "18rem" }} className="m-3 stylecards">
             <Card.Img variant="top" src={noticia0.imagen} className="rounded border-bottom imgcards" />

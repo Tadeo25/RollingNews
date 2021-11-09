@@ -10,7 +10,7 @@ const Footer = () => {
             <Container >
                 <Row>
                     <Col >
-                        <h3 className="mb-4 mt-2">Encontranos en:</h3>
+                        <h3 className="mb-4 mt-2">Estamos en:</h3>
                         <div className="App" style={{ fontSize: "5em" }}>
                             <a href="http://facebook.com/ " className="text-light mr-2 ">
                                 <FontAwesomeIcon icon={faFacebook} /></a> {" "}
@@ -18,7 +18,7 @@ const Footer = () => {
                             </a>
                         </div>
                     </Col>
-                    <Col >
+                    <Col className="unite">
                         <h3 className="mb-4 mt-2">Unite: </h3>
                         <div className="App" style={{ fontSize: "5em" }}>
                             <a href="https://www.apple.com/shop" className="text-light mr-2"> <FontAwesomeIcon icon={faAppStoreIos} /> </a>
